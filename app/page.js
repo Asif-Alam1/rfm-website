@@ -138,7 +138,7 @@ export default function Home() {
 									RFM Inc is a leading consultancy firm specializing in
 									import-export facilitation, student guidance, and visa
 									services. With years of experience and a dedicated team of
-									experts, we've helped countless individuals and businesses
+									experts, we have helped countless individuals and businesses
 									achieve their international goals.
 								</p>
 								<p className='text-cyan-600 mb-6'>
