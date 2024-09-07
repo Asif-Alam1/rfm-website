@@ -16,7 +16,7 @@ import {
 	CheckCircle
 } from 'lucide-react'
 import Image from 'next/image'
-
+import Link from 'next/link'
 export default function Home() {
 	const [isVisible, setIsVisible] = useState(false)
 	const heroRef = useRef(null)
@@ -63,16 +63,20 @@ export default function Home() {
 								</p>
 							</div>
 							<div className='space-x-4'>
-								<Button
-									variant='secondary'
-									className='bg-yellow-400 text-cyan-900 hover:bg-yellow-300 text-lg px-6 py-3'>
-									Explore Services
-								</Button>
-								<Button
-									variant='outline'
-									className='text-white border-white hover:bg-white hover:text-cyan-600 text-lg px-6 py-3'>
-									Contact Us
-								</Button>
+								<Link href='#services'>
+									<Button
+										variant='secondary'
+										className='bg-yellow-400 text-cyan-900 hover:bg-yellow-300 text-lg px-6 py-3'>
+										Explore Services
+									</Button>
+								</Link>
+								<Link href='#contact'>
+									<Button
+										variant='outline'
+										className='text-white border-white hover:bg-white hover:text-cyan-600 text-lg px-6 py-3'>
+										Contact Us
+									</Button>
+								</Link>
 							</div>
 						</div>
 					</div>
@@ -95,7 +99,7 @@ export default function Home() {
 								},
 								{
 									icon: GraduationCap,
-									title: 'Student Consultancy',
+									title: 'Student-Consultancy',
 									description:
 										'Guiding students towards their academic goals worldwide'
 								},
@@ -114,11 +118,13 @@ export default function Home() {
 										{service.title}
 									</h3>
 									<p className='text-cyan-600 mb-4'>{service.description}</p>
-									<Button
-										variant='link'
-										className='text-cyan-600 hover:text-cyan-700'>
-										Learn More <ArrowRight className='ml-2 h-4 w-4' />
-									</Button>
+									<Link href={'/' + service.title.toLowerCase()}>
+										<Button
+											variant='link'
+											className='text-cyan-600 hover:text-cyan-700'>
+											Learn More <ArrowRight className='ml-2 h-4 w-4' />
+										</Button>
+									</Link>
 								</div>
 							))}
 						</div>
@@ -160,9 +166,6 @@ export default function Home() {
 										</li>
 									))}
 								</ul>
-								<Button className='bg-yellow-400 text-cyan-900 hover:bg-yellow-300'>
-									Learn More About Us
-								</Button>
 							</div>
 							<div className='relative h-[500px] rounded-lg overflow-hidden shadow-2xl'>
 								<img

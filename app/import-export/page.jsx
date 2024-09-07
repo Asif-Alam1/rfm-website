@@ -29,6 +29,7 @@ import {
 	CheckCircle
 } from 'lucide-react'
 import Image from 'next/image'
+import Link from 'next/link'
 
 export default function ImportExport() {
 	const [isVisible, setIsVisible] = useState(false)
@@ -98,9 +99,11 @@ export default function ImportExport() {
 									services
 								</p>
 							</div>
-							<Button className='bg-blue-500 text-white hover:bg-blue-600 text-lg px-6 py-3 rounded-full transition-all duration-300 hover:shadow-lg hover:scale-105'>
-								Get Started
-							</Button>
+							<Link href='#contact'>
+								<Button className='bg-blue-500 text-white hover:bg-blue-600 text-lg px-6 py-3 rounded-full transition-all duration-300 hover:shadow-lg hover:scale-105'>
+									Get Started
+								</Button>
+							</Link>
 						</div>
 					</div>
 				</section>
@@ -244,41 +247,6 @@ export default function ImportExport() {
 						</Tabs>
 					</div>
 				</section>
-
-				<section className='w-full py-12 md:py-24 lg:py-32 bg-gradient-to-b from-white to-blue-50'>
-					<div className='container px-4 md:px-6'>
-						<h2 className='text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-center mb-12 text-blue-800'>
-							Get a Quote
-						</h2>
-						<div className='max-w-2xl mx-auto bg-white p-8 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300'>
-							<form className='space-y-4'>
-								<Input
-									placeholder='Your Name'
-									className='border-blue-300 focus:border-blue-500 transition-all duration-300'
-								/>
-								<Input
-									type='email'
-									placeholder='Your Email'
-									className='border-blue-300 focus:border-blue-500 transition-all duration-300'
-								/>
-								<Input
-									placeholder='Company Name'
-									className='border-blue-300 focus:border-blue-500 transition-all duration-300'
-								/>
-								<Textarea
-									placeholder='Describe your import/export needs'
-									className='border-blue-300 focus:border-blue-500 transition-all duration-300'
-								/>
-								<Button
-									type='submit'
-									className='w-full bg-blue-500 text-white hover:bg-blue-600 transition-all duration-300 hover:shadow-lg'>
-									Request Quote
-								</Button>
-							</form>
-						</div>
-					</div>
-				</section>
-
 				<section className='w-full py-12 md:py-24 lg:py-32 bg-blue-900 text-white'>
 					<div className='container px-4 md:px-6'>
 						<div className='grid grid-cols-1 md:grid-cols-2 gap-12 items-center'>
@@ -309,6 +277,41 @@ export default function ImportExport() {
 									fill
 								/>
 							</div>
+						</div>
+					</div>
+				</section>
+				<section
+					className='w-full py-12 md:py-24 lg:py-32 bg-gradient-to-b from-white to-blue-50'
+					id='contact'>
+					<div className='container px-4 md:px-6'>
+						<h2 className='text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-center mb-12 text-blue-800'>
+							Get a Quote
+						</h2>
+						<div className='max-w-2xl mx-auto bg-white p-8 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300'>
+							<form className='space-y-4'>
+								<Input
+									placeholder='Your Name'
+									className='border-blue-300 focus:border-blue-500 transition-all duration-300'
+								/>
+								<Input
+									type='email'
+									placeholder='Your Email'
+									className='border-blue-300 focus:border-blue-500 transition-all duration-300'
+								/>
+								<Input
+									placeholder='Company Name'
+									className='border-blue-300 focus:border-blue-500 transition-all duration-300'
+								/>
+								<Textarea
+									placeholder='Describe your import/export needs'
+									className='border-blue-300 focus:border-blue-500 transition-all duration-300'
+								/>
+								<Button
+									type='submit'
+									className='w-full bg-blue-500 text-white hover:bg-blue-600 transition-all duration-300 hover:shadow-lg'>
+									Request Quote
+								</Button>
+							</form>
 						</div>
 					</div>
 				</section>

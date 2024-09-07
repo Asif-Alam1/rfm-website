@@ -81,7 +81,7 @@ const Navbar = () => {
 			</div>
 
 			{isOpen && (
-				<div className='md:hidden' id='mobile-menu'>
+				<div className='md:hidden bg-cyan-400' id='mobile-menu'>
 					<div className='px-2 pt-2 pb-3 space-y-1 sm:px-3'>
 						{navItems.map(item => (
 							<Link

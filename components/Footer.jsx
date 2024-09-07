@@ -17,38 +17,42 @@ const Footer = () => {
 						<h3 className='text-lg font-semibold mb-4'>Quick Links</h3>
 						<div className='grid grid-cols-2 gap-2'>
 							<Link
-								href='/about'
+								href='/'
 								className='hover:text-yellow-300 transition-colors'>
 								About Us
 							</Link>
 							<Link
-								href='/testimonials'
+								href='/import-export'
 								className='hover:text-yellow-300 transition-colors'>
-								Testimonials
+								Import Exports
 							</Link>
 							<Link
-								href='/faq'
+								href='/student-consultancy'
 								className='hover:text-yellow-300 transition-colors'>
-								FAQ
+								Student Consultancy
 							</Link>
 							<Link
-								href='/careers'
+								href='/visa-consultancy'
 								className='hover:text-yellow-300 transition-colors'>
-								Careers
+								Visa Consultancy
 							</Link>
 						</div>
 					</div>
 					<div>
 						<h3 className='text-lg font-semibold mb-4'>Contact Us</h3>
 						<div className='space-y-4'>
-							<button className='flex items-center space-x-2 bg-yellow-500 hover:bg-yellow-400 text-cyan-900 px-4 py-2 rounded transition-colors w-full justify-center'>
+							<a
+								href='mailto:test@test.com'
+								className='flex items-center space-x-2 bg-yellow-500 hover:bg-yellow-400 text-cyan-900 px-4 py-2 rounded transition-colors w-full justify-center'>
 								<Mail size={20} />
 								<span>Email Us</span>
-							</button>
-							<button className='flex items-center space-x-2 bg-blue-400 hover:bg-blue-300 text-cyan-900 px-4 py-2 rounded transition-colors w-full justify-center'>
+							</a>
+							<a
+								href='tel:0000000'
+								className='flex items-center space-x-2 bg-blue-400 hover:bg-blue-300 text-cyan-900 px-4 py-2 rounded transition-colors w-full justify-center'>
 								<Phone size={20} />
 								<span>Call Us</span>
-							</button>
+							</a>
 						</div>
 					</div>
 				</div>
@@ -74,7 +78,6 @@ const Footer = () => {
 							className='text-cyan-300 hover:text-white transition-colors'>
 							<Facebook size={20} />
 						</a>
-
 						<a
 							href='#'
 							className='text-cyan-300 hover:text-white transition-colors'>

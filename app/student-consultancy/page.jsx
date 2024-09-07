@@ -28,6 +28,7 @@ import {
 	CheckCircle
 } from 'lucide-react'
 import Image from 'next/image'
+import Link from 'next/link'
 
 export default function StudentConsultancy() {
 	const [isVisible, setIsVisible] = useState(false)
@@ -96,9 +97,11 @@ export default function StudentConsultancy() {
 									Your gateway to global education and career success
 								</p>
 							</div>
-							<Button className='bg-purple-500 text-white hover:bg-purple-600 text-lg px-6 py-3 rounded-full transition-all duration-300 hover:shadow-lg hover:scale-105'>
-								Start Your Journey
-							</Button>
+							<Link href='#contact'>
+								<Button className='bg-purple-500 text-white hover:bg-purple-600 text-lg px-6 py-3 rounded-full transition-all duration-300 hover:shadow-lg hover:scale-105'>
+									Start Your Journey
+								</Button>
+							</Link>
 						</div>
 					</div>
 				</section>
@@ -416,7 +419,9 @@ export default function StudentConsultancy() {
 					</div>
 				</section>
 
-				<section className='w-full py-12 md:py-24 lg:py-32 bg-white'>
+				<section
+					className='w-full py-12 md:py-24 lg:py-32 bg-white'
+					id='contact'>
 					<div className='container px-4 md:px-6'>
 						<h2 className='text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-center mb-12 text-purple-800'>
 							Book a Consultation
