@@ -137,14 +137,20 @@ export default function StudentConsultancy() {
 						</h2>
 						<div className='max-w-4xl mx-auto'>
 							<Tabs defaultValue='preparation' className='w-full'>
-								<TabsList className='grid w-full grid-cols-3 mb-8 '>
-									<TabsTrigger value='preparation' className='text-lg py-3'>
+								<TabsList className='grid w-full grid-cols-3 mb-8 bg-white h-full gap-x-4 '>
+									<TabsTrigger
+										value='preparation'
+										className=' text-lg py-3 bg-white hover:bg-purple-100 data-[state=active]:bg-purple-200'>
 										Preparation
 									</TabsTrigger>
-									<TabsTrigger value='application' className='text-lg py-3'>
+									<TabsTrigger
+										value='application'
+										className='text-lg py-3 bg-white hover:bg-purple-100 data-[state=active]:bg-purple-200'>
 										Application
 									</TabsTrigger>
-									<TabsTrigger value='departure' className='text-lg py-3'>
+									<TabsTrigger
+										value='departure'
+										className='text-lg py-3 bg-white hover:bg-purple-100 data-[state=active]:bg-purple-200'>
 										Pre-Departure
 									</TabsTrigger>
 								</TabsList>

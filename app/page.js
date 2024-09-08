@@ -1,7 +1,6 @@
 'use client'
 
 import { useEffect, useRef, useState } from 'react'
-
 import { Button } from '../components/ui/button'
 import { Input } from '../components/ui/input'
 import { Textarea } from '../components/ui/textarea'
@@ -18,6 +17,7 @@ import {
 } from 'lucide-react'
 import Image from 'next/image'
 import Link from 'next/link'
+
 export default function Home() {
 	const [isVisible, setIsVisible] = useState(false)
 	const heroRef = useRef(null)
@@ -45,20 +45,30 @@ export default function Home() {
 	}, [])
 
 	return (
-		<div className='flex flex-col min-h-screen bg-gradient-to-b from-cyan-900 via-cyan-800 to-cyan-700'>
-			<main className='flex-1 pt-16'>
+		<div className='flex flex-col min-h-screen'>
+			<main className='flex-1'>
 				<section
 					ref={heroRef}
-					className={`w-full py-24 md:py-32 lg:py-48 transition-opacity duration-1000 ease-in-out ${
+					className={`relative w-full py-24 md:py-32 lg:py-48 transition-opacity duration-1000 ease-in-out ${
 						isVisible ? 'opacity-100' : 'opacity-0'
 					}`}>
-					<div className='container px-4 md:px-6'>
+					<div className='absolute inset-0 z-0'>
+						<Image
+							src='/banner.png'
+							alt='Background'
+							layout='fill'
+							objectFit='cover'
+							quality={100}
+						/>
+						<div className='absolute inset-0 bg-cyan-600 bg-opacity-60'></div>
+					</div>
+					<div className='container px-4 md:px-6 relative z-10'>
 						<div className='flex flex-col items-center space-y-4 text-center'>
 							<div className='space-y-2'>
 								<h1 className='text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl lg:text-7xl/none bg-clip-text text-transparent bg-gradient-to-r from-white to-yellow-300'>
 									Global Solutions at Your Fingertips
 								</h1>
-								<p className='mx-auto max-w-[700px] text-cyan-100 md:text-xl lg:text-2xl'>
+								<p className='mx-auto max-w-[700px] text-yellow-200 bg-gray-400/25 rounded-xl md:text-xl lg:text-2xl'>
 									RFM Inc: Your trusted partner for Import-Export, Student
 									Consultancy, and Visa Services
 								</p>
@@ -184,11 +194,11 @@ export default function Home() {
 								</Link>
 							</div>
 							<div className='relative h-[500px] rounded-lg overflow-hidden shadow-2xl'>
-								<img
+								<Image
 									src='/office.svg'
 									alt='RFM Inc Team'
-									className='object-cover'
-									fill
+									layout='fill'
+									objectFit='cover'
 								/>
 							</div>
 						</div>

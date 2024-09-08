@@ -140,11 +140,15 @@ export default function ImportExport() {
 						<Tabs
 							defaultValue='import'
 							className='w-full max-w-4xl mx-auto bg-yellow-white'>
-							<TabsList className='grid w-full grid-cols-2 mb-8'>
-								<TabsTrigger value='import' className='text-lg py-3'>
+							<TabsList className='grid w-full grid-cols-2 mb-8 bg-white h-full gap-x-4'>
+								<TabsTrigger
+									value='import'
+									className='text-lg py-3 bg-white hover:bg-blue-300 data-[state=active]:bg-blue-400 '>
 									Import Process
 								</TabsTrigger>
-								<TabsTrigger value='export' className='text-lg py-3'>
+								<TabsTrigger
+									value='export'
+									className='text-lg py-3 bg-white hover:bg-blue-200 data-[state=active]:bg-blue-400'>
 									Export Process
 								</TabsTrigger>
 							</TabsList>
