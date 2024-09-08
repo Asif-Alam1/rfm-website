@@ -13,7 +13,8 @@ import {
 	Phone,
 	MapPin,
 	ArrowRight,
-	CheckCircle
+	CheckCircle,
+	House
 } from 'lucide-react'
 import Image from 'next/image'
 import Link from 'next/link'
@@ -89,25 +90,35 @@ export default function Home() {
 						<h2 className='text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-center mb-12 text-cyan-800'>
 							Our Services
 						</h2>
-						<div className='grid grid-cols-1 md:grid-cols-3 gap-8'>
+						<div className='grid grid-cols-1 md:grid-cols-2 gap-10'>
 							{[
 								{
 									icon: Globe,
 									title: 'Import-Export',
 									description:
-										'Facilitating global trade with expert import-export services'
+										'Facilitating global trade with expert import-export services',
+									href: '/import-export'
 								},
 								{
 									icon: GraduationCap,
-									title: 'Student-Consultancy',
+									title: 'Student Consultancy',
 									description:
-										'Guiding students towards their academic goals worldwide'
+										'Guiding students towards their academic goals worldwide',
+									href: '/student-consultancy'
 								},
 								{
 									icon: Plane,
 									title: 'Visa Consultancy',
 									description:
-										'Simplifying visa processes for seamless international travel'
+										'Simplifying visa processes for seamless international travel',
+									href: '/visa-consultancy'
+								},
+								{
+									icon: House,
+									title: 'Real Estate Solutions',
+									description:
+										'Your trusted partner in finding the perfect property',
+									href: '/real-estate'
 								}
 							].map((service, index) => (
 								<div
@@ -118,7 +129,7 @@ export default function Home() {
 										{service.title}
 									</h3>
 									<p className='text-cyan-600 mb-4'>{service.description}</p>
-									<Link href={'/' + service.title.toLowerCase()}>
+									<Link href={service.href}>
 										<Button
 											variant='link'
 											className='text-cyan-600 hover:text-cyan-700'>
@@ -166,6 +177,11 @@ export default function Home() {
 										</li>
 									))}
 								</ul>
+								<Link href='/about'>
+									<Button className='bg-yellow-400 text-cyan-900 hover:bg-yellow-300'>
+										Learn More About Us
+									</Button>
+								</Link>
 							</div>
 							<div className='relative h-[500px] rounded-lg overflow-hidden shadow-2xl'>
 								<img

@@ -9,8 +9,9 @@ const Footer = () => {
 					<div>
 						<h3 className='text-lg font-semibold mb-4'>About RFM Inc</h3>
 						<p className='text-cyan-200'>
-							Your trusted partner for Import-Export, Student Consultancy, and
-							Visa Services. Bridging global opportunities since 2005.
+							Your trusted partner for Import-Export, Student Consultancy, Real
+							Estate, and Visa Services. Bridging global opportunities since
+							2005.
 						</p>
 					</div>
 					<div>
@@ -19,7 +20,7 @@ const Footer = () => {
 							<Link
 								href='/'
 								className='hover:text-yellow-300 transition-colors'>
-								About Us
+								Home
 							</Link>
 							<Link
 								href='/import-export'
@@ -32,9 +33,19 @@ const Footer = () => {
 								Student Consultancy
 							</Link>
 							<Link
-								href='/visa-consultancy'
+								href='/real-estate'
 								className='hover:text-yellow-300 transition-colors'>
-								Visa Consultancy
+								Real Estate
+							</Link>
+							<Link
+								href='/about'
+								className='hover:text-yellow-300 transition-colors'>
+								About Us
+							</Link>
+							<Link
+								href='/contact'
+								className='hover:text-yellow-300 transition-colors'>
+								Contact
 							</Link>
 						</div>
 					</div>

@@ -22,10 +22,11 @@ const Navbar = () => {
 	}, [])
 
 	const navItems = [
-		{ href: '/', label: 'Home' },
 		{ href: '/import-export', label: 'Import-Export' },
 		{ href: '/student-consultancy', label: 'Student Consultancy' },
-		{ href: '/visa-consultancy', label: 'Visa Consultancy' }
+		{ href: '/visa-consultancy', label: 'Visa Consultancy' },
+		{ href: '/real-estate', label: 'Real Estate' },
+		{ href: '/about', label: 'About Us' }
 	]
 
 	return (
