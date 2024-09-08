@@ -104,7 +104,7 @@ export default function RealEstate() {
 		{
 			icon: Key,
 			title: 'Property Management',
-			description: 'Comprehensive management services for property owners'
+			description: 'Comprehensive management services for owners'
 		},
 		{
 			icon: Briefcase,
