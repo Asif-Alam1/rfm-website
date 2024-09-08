@@ -34,22 +34,30 @@ export default function About() {
 		{
 			name: 'Asif',
 			role: 'CEO',
-			image: '/asif.jpeg'
+			image: '/asif.jpeg',
+			description:
+				'Visionary leader with over 20 years of experience in global trade and education.'
 		},
 		{
 			name: 'Asif',
 			role: 'COO',
-			image: '/asif.jpeg'
+			image: '/asif.jpeg',
+			description:
+				'Operations expert ensuring smooth functioning of our diverse service offerings.'
 		},
 		{
 			name: 'Asif',
 			role: 'CFO',
-			image: '/asif.jpeg'
+			image: '/asif.jpeg',
+			description:
+				'Financial strategist driving sustainable growth and fiscal responsibility.'
 		},
 		{
 			name: 'Asif',
 			role: 'Head of Marketing',
-			image: '/asif.jpeg'
+			image: '/asif.jpeg',
+			description:
+				'Creative mind behind our global brand presence and customer engagement strategies.'
 		}
 	]
 
@@ -88,7 +96,7 @@ export default function About() {
 									believed in the power of connecting people across borders.
 								</p>
 								<p className='text-gray-600 mb-6'>
-									Over the years, we've grown into a multifaceted organization,
+									Over the years, we have grown into a multifaceted organization,
 									expanding our services to include import-export facilitation,
 									student consultancy, and real estate solutions. Our commitment
 									to excellence and customer satisfaction has remained
@@ -99,7 +107,7 @@ export default function About() {
 								</Button>
 							</div>
 							<div className='relative h-[400px] rounded-lg overflow-hidden shadow-2xl scroll-animate'>
-								<img
+								<Image
 									src='/company.svg'
 									alt='RFM Inc History'
 									className='object-cover'
@@ -121,7 +129,7 @@ export default function About() {
 									icon: Users,
 									title: 'Customer-Centric',
 									description:
-										"We put our clients' needs at the heart of everything we do"
+										"We put our clients needs at the heart of everything we do"
 								},
 								{
 									icon: Target,
@@ -167,15 +175,20 @@ export default function About() {
 							{teamMembers.map((member, index) => (
 								<Card
 									key={index}
-									className='scroll-animate bg-gray-50 hover:shadow-lg transition-all duration-300'>
-									<CardHeader>
+									className='scroll-animate bg-gray-50 hover:shadow-lg transition-all duration-300 group'>
+									<CardHeader className='relative overflow-hidden'>
 										<div className='relative w-full h-48 mb-4'>
 											<Image
 												src={member.image}
 												alt={member.name}
-												className='object-cover rounded-lg'
+												className='object-cover rounded-lg transition-transform duration-300'
 												fill
 											/>
+											<div className='absolute inset-0 bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center p-4'>
+												<p className='text-white text-center w-full'>
+													{member.description}
+												</p>
+											</div>
 										</div>
 										<CardTitle>{member.name}</CardTitle>
 										<CardDescription>{member.role}</CardDescription>
@@ -194,9 +207,9 @@ export default function About() {
 									Join Our Team
 								</h2>
 								<p className='text-gray-300 mb-6'>
-									We're always looking for talented individuals to join our
-									growing team. If you're passionate about making a difference
-									in global trade, education, or real estate, we'd love to hear
+									We are always looking for talented individuals to join our
+									growing team. If you are passionate about making a difference
+									in global trade, education, or real estate, we would love to hear
 									from you.
 								</p>
 								<a href='mailto:test@test.com'>
