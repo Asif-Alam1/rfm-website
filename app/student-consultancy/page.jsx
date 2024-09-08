@@ -66,7 +66,7 @@ export default function StudentConsultancy() {
 		{
 			icon: Users,
 			title: 'Pre-Departure Briefing',
-			description: 'Prepare for your journey with comprehensive information'
+			description: 'Prepare for your journey with information'
 		},
 		{
 			icon: Lightbulb,

@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react'
 import Image from 'next/image'
+import Link from 'next/link'
 import { Button } from '../../components/ui/button'
 import { Input } from '../../components/ui/input'
 import { Textarea } from '../../components/ui/textarea'
@@ -95,9 +96,11 @@ export default function VisaConsultancy() {
 									Your gateway to global opportunities with expert visa guidance
 								</p>
 							</div>
-							<Button className='bg-yellow-500 text-yellow-900 hover:bg-yellow-400 text-lg px-6 py-3 rounded-full transition-all duration-300 hover:shadow-lg hover:scale-105'>
-								Get Started
-							</Button>
+							<Link href='#contact'>
+								<Button className='bg-yellow-500 text-yellow-900 hover:bg-yellow-400 text-lg px-6 py-3 rounded-full transition-all duration-300 hover:shadow-lg hover:scale-105'>
+									Get Started
+								</Button>
+							</Link>
 						</div>
 					</div>
 				</section>
@@ -270,7 +273,9 @@ export default function VisaConsultancy() {
 					</div>
 				</section>
 
-				<section className='w-full py-12 md:py-24 lg:py-32 bg-white'>
+				<section
+					className='w-full py-12 md:py-24 lg:py-32 bg-white'
+					id='contact'>
 					<div className='container px-4 md:px-6'>
 						<h2 className='text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-center mb-12 text-yellow-800'>
 							Book a Consultation

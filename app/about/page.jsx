@@ -96,11 +96,11 @@ export default function About() {
 									believed in the power of connecting people across borders.
 								</p>
 								<p className='text-gray-600 mb-6'>
-									Over the years, we have grown into a multifaceted organization,
-									expanding our services to include import-export facilitation,
-									student consultancy, and real estate solutions. Our commitment
-									to excellence and customer satisfaction has remained
-									unwavering throughout our growth.
+									Over the years, we have grown into a multifaceted
+									organization, expanding our services to include import-export
+									facilitation, student consultancy, and real estate solutions.
+									Our commitment to excellence and customer satisfaction has
+									remained unwavering throughout our growth.
 								</p>
 								<Button className='bg-gray-800 text-white hover:bg-gray-700'>
 									Learn More
@@ -129,7 +129,7 @@ export default function About() {
 									icon: Users,
 									title: 'Customer-Centric',
 									description:
-										"We put our clients needs at the heart of everything we do"
+										'We put our clients needs at the heart of everything we do'
 								},
 								{
 									icon: Target,
@@ -209,10 +209,10 @@ export default function About() {
 								<p className='text-gray-300 mb-6'>
 									We are always looking for talented individuals to join our
 									growing team. If you are passionate about making a difference
-									in global trade, education, or real estate, we would love to hear
-									from you.
+									in global trade, education, or real estate, we would love to
+									hear from you.
 								</p>
-								<a href='mailto:test@test.com'>
+								<a href='mailto:rfmbusinessbd@gmail.com'>
 									<Button className='bg-white text-gray-900 hover:bg-gray-100'>
 										Send us your resume
 									</Button>
