@@ -292,15 +292,17 @@ export default function Home() {
 							<div className='space-y-4'>
 								<div className='flex items-center space-x-2 text-cyan-700'>
 									<Mail className='h-5 w-5' />
-									<span>info@rfminc.com</span>
+									<span>rfmbusinessbd@gmail.com</span>
 								</div>
 								<div className='flex items-center space-x-2 text-cyan-700'>
 									<Phone className='h-5 w-5' />
-									<span>+1 (555) 123-4567</span>
+									<span>+8801815558785</span>
 								</div>
 								<div className='flex items-center space-x-2 text-cyan-700'>
 									<MapPin className='h-5 w-5' />
-									<span>123 Business Street, City, Country</span>
+									<span>
+										Level 6, House-299, Free School Street, Kathalbagan, Dhaka
+									</span>
 								</div>
 								<div className='h-[300px] rounded-lg overflow-hidden shadow-lg'>
 									<iframe
