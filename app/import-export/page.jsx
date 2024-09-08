@@ -61,7 +61,7 @@ export default function ImportExport() {
 				headers: {
 					'Content-Type': 'application/json'
 				},
-				body: JSON.stringify(formData)
+				body: JSON.stringify({ ...formData, subject: 'Import-Export Inquiry' })
 			})
 			if (response.ok) {
 				toast.success('Message sent successfully')
@@ -338,14 +338,6 @@ export default function ImportExport() {
 									type='email'
 									placeholder='Your Email'
 									value={formData.email}
-									onChange={handleChange}
-									className='border-blue-300 focus:border-blue-500 transition-all duration-300'
-									required
-								/>
-								<Input
-									name='subject'
-									placeholder='Subject'
-									value={formData.subject}
 									onChange={handleChange}
 									className='border-blue-300 focus:border-blue-500 transition-all duration-300'
 									required

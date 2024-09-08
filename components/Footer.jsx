@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import { Mail, Phone, Facebook, Instagram } from 'lucide-react'
+import { Mail, Phone, Facebook, Instagram, Linkedin } from 'lucide-react'
 
 const Footer = () => {
 	return (
@@ -69,20 +69,27 @@ const Footer = () => {
 				</div>
 				<div className='mt-8 border-t border-cyan-700 pt-8 flex flex-col md:flex-row justify-between items-center'>
 					<p className='text-cyan-300 mb-4 md:mb-0'>
-						&copy; 2023 RFM Inc. All rights reserved.
+						&copy; 2024 RFM Inc. All rights reserved.
 					</p>
 
 					<div className='flex space-x-4 mt-4 md:mt-0'>
-						<a
-							href='#'
+						<Link
+							href='https://www.facebook.com/share/s1sXGT5JbtNWBgTM/?mibextid=LQQJ4d'
+							target='_blank'
 							className='text-cyan-300 hover:text-white transition-colors'>
 							<Facebook size={20} />
-						</a>
+						</Link>
 						<a
 							href='#'
 							className='text-cyan-300 hover:text-white transition-colors'>
 							<Instagram size={20} />
 						</a>
+						<Link
+							href='https://www.linkedin.com/company/rfm-group-of-companies/'
+							target='_blank'
+							className='text-cyan-300 hover:text-white transition-colors'>
+							<Linkedin size={20} />
+						</Link>
 					</div>
 				</div>
 			</div>

@@ -59,7 +59,10 @@ export default function Home() {
 				headers: {
 					'Content-Type': 'application/json'
 				},
-				body: JSON.stringify(formData)
+				body: JSON.stringify({
+					...formData,
+					subject: 'General Inquiry Inquiry'
+				})
 			})
 			if (response.ok) {
 				toast.success('Message sent successfully!')
@@ -266,14 +269,7 @@ export default function Home() {
 										className='border-cyan-300 focus:border-cyan-500'
 										required
 									/>
-									<Input
-										name='subject'
-										placeholder='Subject'
-										value={formData.subject}
-										onChange={handleChange}
-										className='border-cyan-300 focus:border-cyan-500'
-										required
-									/>
+
 									<Textarea
 										name='message'
 										placeholder='Your Message'

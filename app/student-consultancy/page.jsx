@@ -48,7 +48,10 @@ export default function StudentConsultancy() {
 				headers: {
 					'Content-Type': 'application/json'
 				},
-				body: JSON.stringify(formData)
+				body: JSON.stringify({
+					...formData,
+					subject: 'Student Consultancy Inquiry'
+				})
 			})
 			if (response.ok) {
 				toast.success('Message sent successfully!')
@@ -485,14 +488,7 @@ export default function StudentConsultancy() {
 									className='border-purple-300 focus:border-purple-500 transition-all duration-300'
 									required
 								/>
-								<Input
-									name='subject'
-									placeholder='Subject'
-									value={formData.subject}
-									onChange={handleChange}
-									className='border-purple-300 focus:border-purple-500 transition-all duration-300'
-									required
-								/>
+
 								<Textarea
 									name='message'
 									placeholder='Your Message'

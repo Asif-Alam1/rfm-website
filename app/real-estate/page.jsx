@@ -61,7 +61,7 @@ export default function RealEstate() {
 				headers: {
 					'Content-Type': 'application/json'
 				},
-				body: JSON.stringify(formData)
+				body: JSON.stringify({ ...formData, subject: 'Real Estate Inquiry' })
 			})
 			if (response.ok) {
 				toast.success('Message sent successfully!')
@@ -223,14 +223,7 @@ export default function RealEstate() {
 									className='border-green-300 focus:border-green-500 transition-all duration-300'
 									required
 								/>
-								<Input
-									name='subject'
-									placeholder='Subject'
-									value={formData.subject}
-									onChange={handleChange}
-									className='border-green-300 focus:border-green-500 transition-all duration-300'
-									required
-								/>
+
 								<Textarea
 									name='message'
 									placeholder='Tell us about your property needs'

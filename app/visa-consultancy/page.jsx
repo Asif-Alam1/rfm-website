@@ -61,7 +61,10 @@ export default function VisaConsultancy() {
 				headers: {
 					'Content-Type': 'application/json'
 				},
-				body: JSON.stringify(formData)
+				body: JSON.stringify({
+					...formData,
+					subject: 'Visa Consultancy Inquiry'
+				})
 			})
 			if (response.ok) {
 				toast.success('Message sent successfully!')
@@ -333,14 +336,7 @@ export default function VisaConsultancy() {
 									className='border-yellow-300 focus:border-yellow-500 transition-all duration-300'
 									required
 								/>
-								<Input
-									name='subject'
-									placeholder='Subject'
-									value={formData.subject}
-									onChange={handleChange}
-									className='border-yellow-300 focus:border-yellow-500 transition-all duration-300'
-									required
-								/>
+
 								<Textarea
 									name='message'
 									placeholder='Tell us about your visa requirements'
