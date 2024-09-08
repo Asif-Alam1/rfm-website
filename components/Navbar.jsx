@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { Menu, X } from 'lucide-react'
@@ -9,16 +9,27 @@ import Image from 'next/image'
 const Navbar = () => {
 	const [isOpen, setIsOpen] = useState(false)
 	const pathname = usePathname()
-
 	const [scrolled, setScrolled] = useState(false)
+	const navRef = useRef(null)
 
 	useEffect(() => {
 		const handleScroll = () => {
 			setScrolled(window.scrollY > 20)
 		}
 
+		const handleClickOutside = event => {
+			if (navRef.current && !navRef.current.contains(event.target)) {
+				setIsOpen(false)
+			}
+		}
+
 		window.addEventListener('scroll', handleScroll)
-		return () => window.removeEventListener('scroll', handleScroll)
+		document.addEventListener('mousedown', handleClickOutside)
+
+		return () => {
+			window.removeEventListener('scroll', handleScroll)
+			document.removeEventListener('mousedown', handleClickOutside)
+		}
 	}, [])
 
 	const navItems = [
@@ -29,8 +40,13 @@ const Navbar = () => {
 		{ href: '/about', label: 'About Us' }
 	]
 
+	const handleLinkClick = () => {
+		setIsOpen(false)
+	}
+
 	return (
 		<nav
+			ref={navRef}
 			className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
 				scrolled ? 'bg-cyan-700/90 backdrop-blur-md' : 'bg-transparent'
 			}`}>
@@ -88,6 +104,7 @@ const Navbar = () => {
 							<Link
 								key={item.href}
 								href={item.href}
+								onClick={handleLinkClick}
 								className={`block px-3 py-2 rounded-md text-base font-medium ${
 									pathname === item.href
 										? 'bg-cyan-600 text-white'
