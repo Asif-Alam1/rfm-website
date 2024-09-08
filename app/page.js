@@ -17,6 +17,7 @@ import {
 } from 'lucide-react'
 import Image from 'next/image'
 import Link from 'next/link'
+import toast from 'react-hot-toast'
 
 export default function Home() {
 	const [isVisible, setIsVisible] = useState(false)
@@ -43,6 +44,39 @@ export default function Home() {
 			}
 		}
 	}, [])
+	const [formData, setFormData] = useState({
+		name: '',
+		email: '',
+		subject: '',
+		message: ''
+	})
+
+	const handleSubmit = async e => {
+		e.preventDefault()
+		try {
+			const response = await fetch('/api/contact', {
+				method: 'POST',
+				headers: {
+					'Content-Type': 'application/json'
+				},
+				body: JSON.stringify(formData)
+			})
+			if (response.ok) {
+				toast.success('Message sent successfully!')
+				setFormData({ name: '', email: '', subject: '', message: '' })
+			} else {
+				toast.error('Failed to send message. Please try again.')
+			}
+		} catch (error) {
+			console.error('Error:', error)
+			toast.error('An error occurred. Please try again.')
+		}
+	}
+
+	const handleChange = e => {
+		const { name, value } = e.target
+		setFormData(prevState => ({ ...prevState, [name]: value }))
+	}
 
 	return (
 		<div className='flex flex-col min-h-screen'>
@@ -214,23 +248,39 @@ export default function Home() {
 						</h2>
 						<div className='grid grid-cols-1 md:grid-cols-2 gap-12'>
 							<div className='bg-white p-6 rounded-lg shadow-lg'>
-								<form className='space-y-4'>
+								<form onSubmit={handleSubmit} className='space-y-4'>
 									<Input
+										name='name'
 										placeholder='Your Name'
+										value={formData.name}
+										onChange={handleChange}
 										className='border-cyan-300 focus:border-cyan-500'
+										required
 									/>
 									<Input
+										name='email'
 										type='email'
 										placeholder='Your Email'
+										value={formData.email}
+										onChange={handleChange}
 										className='border-cyan-300 focus:border-cyan-500'
+										required
 									/>
 									<Input
+										name='subject'
 										placeholder='Subject'
+										value={formData.subject}
+										onChange={handleChange}
 										className='border-cyan-300 focus:border-cyan-500'
+										required
 									/>
 									<Textarea
+										name='message'
 										placeholder='Your Message'
-										className='border-cyan-300 focus:border-cyan-500'
+										value={formData.message}
+										onChange={handleChange}
+										className='border-cyan-300 focus:border-cyan-500 text-cyan-400'
+										required
 									/>
 									<Button
 										type='submit'

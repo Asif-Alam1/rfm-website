@@ -29,9 +29,43 @@ import {
 } from 'lucide-react'
 import Image from 'next/image'
 import Link from 'next/link'
+import toast from 'react-hot-toast'
 
 export default function StudentConsultancy() {
 	const [isVisible, setIsVisible] = useState(false)
+	const [formData, setFormData] = useState({
+		name: '',
+		email: '',
+		subject: '',
+		message: ''
+	})
+
+	const handleSubmit = async e => {
+		e.preventDefault()
+		try {
+			const response = await fetch('/api/contact', {
+				method: 'POST',
+				headers: {
+					'Content-Type': 'application/json'
+				},
+				body: JSON.stringify(formData)
+			})
+			if (response.ok) {
+				toast.success('Message sent successfully!')
+				setFormData({ name: '', email: '', subject: '', message: '' })
+			} else {
+				toast.error('Failed to send message. Please try again.')
+			}
+		} catch (error) {
+			console.error('Error:', error)
+			toast.success('An error occurred. Please try again.')
+		}
+	}
+
+	const handleChange = e => {
+		const { name, value } = e.target
+		setFormData(prevState => ({ ...prevState, [name]: value }))
+	}
 
 	useEffect(() => {
 		setIsVisible(true)
@@ -433,28 +467,44 @@ export default function StudentConsultancy() {
 							Book a Consultation
 						</h2>
 						<div className='max-w-2xl mx-auto bg-purple-50 p-8 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300'>
-							<form className='space-y-4'>
+							<form onSubmit={handleSubmit} className='space-y-4'>
 								<Input
+									name='name'
 									placeholder='Your Name'
+									value={formData.name}
+									onChange={handleChange}
 									className='border-purple-300 focus:border-purple-500 transition-all duration-300'
+									required
 								/>
 								<Input
+									name='email'
 									type='email'
 									placeholder='Your Email'
+									value={formData.email}
+									onChange={handleChange}
 									className='border-purple-300 focus:border-purple-500 transition-all duration-300'
+									required
 								/>
 								<Input
-									placeholder='Phone Number'
+									name='subject'
+									placeholder='Subject'
+									value={formData.subject}
+									onChange={handleChange}
 									className='border-purple-300 focus:border-purple-500 transition-all duration-300'
+									required
 								/>
 								<Textarea
-									placeholder='Tell us about your study abroad plans'
-									className='border-purple-300 focus:border-purple-500 transition-all duration-300'
+									name='message'
+									placeholder='Your Message'
+									value={formData.message}
+									onChange={handleChange}
+									className='border-purple-300 focus:border-purple-500 transition-all duration-300 text-cyan-400'
+									required
 								/>
 								<Button
 									type='submit'
 									className='w-full bg-purple-500 text-white hover:bg-purple-600 transition-all duration-300 hover:shadow-lg'>
-									Schedule Consultation
+									Send Message
 								</Button>
 							</form>
 						</div>
