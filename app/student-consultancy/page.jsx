@@ -1,7 +1,6 @@
 'use client'
 
 import { useState, useEffect } from 'react'
-
 import { Button } from '../../components/ui/button'
 import { Input } from '../../components/ui/input'
 import { Textarea } from '../../components/ui/textarea'
@@ -19,13 +18,24 @@ import {
 	TabsTrigger
 } from '../../components/ui/tabs'
 import {
+	Select,
+	SelectContent,
+	SelectItem,
+	SelectTrigger,
+	SelectValue
+} from '../../components/ui/select'
+import {
 	GraduationCap,
 	BookOpen,
 	Globe,
 	Users,
 	Lightbulb,
 	Award,
-	CheckCircle
+	CheckCircle,
+	FileText,
+	List,
+	DollarSign,
+	MapPin
 } from 'lucide-react'
 import Image from 'next/image'
 import Link from 'next/link'
@@ -39,6 +49,8 @@ export default function StudentConsultancy() {
 		subject: '',
 		message: ''
 	})
+	const [countryFilter, setCountryFilter] = useState('All')
+	const [costFilter, setCostFilter] = useState('All')
 
 	const handleSubmit = async e => {
 		e.preventDefault()
@@ -61,7 +73,7 @@ export default function StudentConsultancy() {
 			}
 		} catch (error) {
 			console.error('Error:', error)
-			toast.success('An error occurred. Please try again.')
+			toast.error('An error occurred. Please try again.')
 		}
 	}
 
@@ -103,7 +115,7 @@ export default function StudentConsultancy() {
 		{
 			icon: Users,
 			title: 'Pre-Departure Briefing',
-			description: 'Prepare for your journey with information'
+			description: 'Prepare for your journey with comprehensive information'
 		},
 		{
 			icon: Lightbulb,
@@ -116,6 +128,86 @@ export default function StudentConsultancy() {
 			description: 'Discover and apply for relevant scholarships'
 		}
 	]
+
+	const visaChecklist = [
+		{ item: 'Passport', responsibility: 'Client' },
+		{ item: 'Academic transcripts', responsibility: 'Client' },
+		{ item: 'Work experience certificates', responsibility: 'Client' },
+		{ item: 'Test scores (IELTS, Duolingo, itep)', responsibility: 'Client' },
+		{
+			item: 'Internships and other relevant certificates',
+			responsibility: 'Client'
+		},
+		{
+			item: 'Bank Solvency',
+			responsibility: 'Client (RFM will help if needed)'
+		},
+		{
+			item: '6 month bank statement',
+			responsibility: 'Client (RFM will help if needed)'
+		},
+		{ item: 'i20 and offer letter', responsibility: 'University' },
+		{ item: 'Visa appointment letter', responsibility: 'RFM' },
+		{ item: 'DS-160 confirmation', responsibility: 'RFM' },
+		{ item: 'SEVIS-Fee receipt and Visa fee receipt', responsibility: 'RFM' },
+		{ item: 'Scholarship', responsibility: 'RFM' }
+	]
+
+	const applicationProcess = [
+		'Language test',
+		'Submission of all academic certificates to the university',
+		'Getting Offer Letter from university',
+		'Manage Bank Solvency',
+		'Getting i-20',
+		'Sevis fee Submission',
+		'DS-160 Form',
+		'Embassy Date',
+		'Facing Embassy',
+		'Getting Visa',
+		'Fly',
+		'Paying Tuition Fee at the University'
+	]
+
+	const partnerUniversities = [
+		{
+			name: 'California Institute of Advanced Management',
+			fee: '$12,000',
+			country: 'USA'
+		},
+		{ name: 'Harrisburg University', fee: '$16,000 - $17,000', country: 'USA' },
+		{ name: 'Humphreys University', fee: '$9,000', country: 'USA' },
+		{ name: 'McDaniel College', fee: '$12,000', country: 'USA' },
+		{ name: 'New England College', fee: '$8,000 - $9,000', country: 'USA' },
+		{ name: 'National Louis University', fee: '$15,000', country: 'USA' },
+		{ name: 'Monroe College', fee: '$12,000 - $19,000', country: 'USA' },
+		{ name: 'Ottawa University', fee: '$15,000 - $18,000', country: 'Canada' },
+		{ name: 'Sofia University', fee: '$12,000', country: 'USA' },
+		{
+			name: "Saint Peter's University",
+			fee: '$14,000 - $15,000',
+			country: 'USA'
+		},
+		{ name: 'Westcliffe University', fee: '$13,000 - $20,000', country: 'USA' },
+		{ name: 'Tennessee Wesleyan University', fee: '$12,000', country: 'USA' },
+		{ name: 'University of the Cumberlands', fee: '$12,000', country: 'USA' },
+		{ name: 'Trine University', fee: '$10,000 - $16,000', country: 'USA' },
+		{ name: 'Campbellsville University', fee: '$10,000', country: 'USA' },
+		{ name: 'University of Potomac', fee: '$8,000', country: 'USA' }
+	]
+
+	const filteredUniversities = partnerUniversities.filter(uni => {
+		const matchesCountry =
+			countryFilter === 'All' || uni.country === countryFilter
+		const feeLower = parseInt(uni.fee.replace(/[^0-9]/g, ''))
+		const matchesCost =
+			costFilter === 'All' ||
+			(costFilter === 'Under $10,000' && feeLower < 10000) ||
+			(costFilter === '$10,000 - $15,000' &&
+				feeLower >= 10000 &&
+				feeLower <= 15000) ||
+			(costFilter === 'Over $15,000' && feeLower > 15000)
+		return matchesCountry && matchesCost
+	})
 
 	return (
 		<div className='flex flex-col min-h-screen bg-gradient-to-b from-purple-900 via-purple-800 to-indigo-700'>
@@ -174,16 +266,21 @@ export default function StudentConsultancy() {
 						</h2>
 						<div className='max-w-4xl mx-auto'>
 							<Tabs defaultValue='preparation' className='w-full'>
-								<TabsList className='grid w-full grid-cols-3 mb-8 bg-white h-full gap-x-4 '>
+								<TabsList className='grid w-full grid-cols-4 mb-8 bg-white h-full gap-x-4'>
 									<TabsTrigger
 										value='preparation'
-										className=' text-lg py-3 bg-white hover:bg-purple-100 data-[state=active]:bg-purple-200'>
+										className='text-lg py-3 bg-white hover:bg-purple-100 data-[state=active]:bg-purple-200'>
 										Preparation
 									</TabsTrigger>
 									<TabsTrigger
 										value='application'
 										className='text-lg py-3 bg-white hover:bg-purple-100 data-[state=active]:bg-purple-200'>
 										Application
+									</TabsTrigger>
+									<TabsTrigger
+										value='visa'
+										className='text-lg py-3 bg-white hover:bg-purple-100 data-[state=active]:bg-purple-200'>
+										Visa Process
 									</TabsTrigger>
 									<TabsTrigger
 										value='departure'
@@ -232,44 +329,44 @@ export default function StudentConsultancy() {
 								<TabsContent value='application'>
 									<div className='bg-white p-6 rounded-lg shadow-lg'>
 										<ol className='relative border-l border-purple-200 ml-3 space-y-8'>
-											{[
-												{
-													title: 'Document Preparation',
-													description:
-														'Gather and prepare all necessary documents, including transcripts, recommendation letters, and essays.'
-												},
-												{
-													title: 'Application Submission',
-													description:
-														'Complete and submit applications to chosen universities with guidance from our counselors.'
-												},
-												{
-													title: 'Scholarship Applications',
-													description:
-														'Identify and apply for relevant scholarships to support your studies abroad.'
-												},
-												{
-													title: 'Interview Preparation',
-													description:
-														'Receive coaching for potential university or scholarship interviews.'
-												}
-											].map((step, index) => (
+											{applicationProcess.map((step, index) => (
 												<li key={index} className='mb-10 ml-6'>
-													<span className='absolute flex items-center justify-center w-8 h-8 bg-purple-100 rounded-full -left-4 ring-4 ring-white'>
+													<span className='absolute flex items-center justify-center w-8 h-8 bg-purple-100 rounded-full -left-4 ring-4  ring-white'>
 														{index + 1}
 													</span>
 													<h3 className='font-medium text-lg mb-1 text-purple-800'>
-														{step.title}
+														{step}
 													</h3>
-													<p className='text-gray-700'>{step.description}</p>
 												</li>
 											))}
 										</ol>
 									</div>
 								</TabsContent>
+								<TabsContent value='visa'>
+									<div className='bg-white p-6 rounded-lg shadow-lg'>
+										<h3 className='font-bold text-xl mb-4 text-purple-800'>
+											Student Visa Checklist
+										</h3>
+										<ul className='space-y-2'>
+											{visaChecklist.map((item, index) => (
+												<li key={index} className='flex items-start'>
+													<CheckCircle className='h-5 w-5 mr-2 text-purple-500 mt-1' />
+													<div>
+														<span className='font-medium text-cyan-600'>
+															{item.item}
+														</span>
+														<span className='text-sm text-gray-600 ml-2'>
+															({item.responsibility})
+														</span>
+													</div>
+												</li>
+											))}
+										</ul>
+									</div>
+								</TabsContent>
 								<TabsContent value='departure'>
 									<div className='bg-white p-6 rounded-lg shadow-lg'>
-										<ol className='relative border-l border-purple-200 ml-3 space-y-8'>
+										<ol className='relative border-l border-purple-200 ml-3  space-y-8'>
 											{[
 												{
 													title: 'Visa Application',
@@ -313,118 +410,56 @@ export default function StudentConsultancy() {
 				<section className='w-full py-12 md:py-24 lg:py-32 bg-gradient-to-b from-white to-purple-50'>
 					<div className='container px-4 md:px-6'>
 						<h2 className='text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-center mb-12 text-purple-800'>
-							Popular Destinations
+							Partner Universities
 						</h2>
-						<Tabs defaultValue='usa' className='w-full max-w-3xl mx-auto'>
-							<TabsList className='grid w-full grid-cols-4'>
-								<TabsTrigger value='usa'>USA</TabsTrigger>
-								<TabsTrigger value='uk'>UK</TabsTrigger>
-								<TabsTrigger value='canada'>Canada</TabsTrigger>
-								<TabsTrigger value='australia'>Australia</TabsTrigger>
-							</TabsList>
-							{[
-								{
-									country: 'usa',
-									universities: [
-										'Harvard University',
-										'MIT',
-										'Stanford University',
-										'Yale University'
-									],
-									courses: [
-										'Computer Science',
-										'Business Administration',
-										'Engineering',
-										'Liberal Arts'
-									]
-								},
-								{
-									country: 'uk',
-									universities: [
-										'University of Oxford',
-										'University of Cambridge',
-										'Imperial College London',
-										'UCL'
-									],
-									courses: [
-										'Law',
-										'Medicine',
-										'Economics',
-										'English Literature'
-									]
-								},
-								{
-									country: 'canada',
-									universities: [
-										'University of Toronto',
-										'McGill University',
-										'University of British Columbia',
-										'University of Waterloo'
-									],
-									courses: [
-										'Environmental Science',
-										'Psychology',
-										'Data Science',
-										'International Relations'
-									]
-								},
-								{
-									country: 'australia',
-									universities: [
-										'University of Melbourne',
-										'Australian National University',
-										'University of Sydney',
-										'University of Queensland'
-									],
-									courses: [
-										'Marine Biology',
-										'Tourism Management',
-										'Renewable Energy Engineering',
-										'Sports Science'
-									]
-								}
-							].map(data => (
-								<TabsContent
-									key={data.country}
-									value={data.country}
-									className='mt-8'>
-									<Card className='bg-gradient-to-br from-purple-50 to-white hover:shadow-lg transition-all duration-300'>
-										<CardHeader>
-											<CardTitle className='capitalize text-2xl mb-2'>
-												{data.country}
-											</CardTitle>
-											<CardDescription>
-												Top universities and popular courses in {data.country}
-											</CardDescription>
-										</CardHeader>
-										<CardContent>
-											<div className='grid md:grid-cols-2 gap-6'>
-												<div>
-													<h4 className='font-semibold text-lg mb-2 text-purple-700'>
-														Top Universities
-													</h4>
-													<ul className='list-disc pl-5 space-y-1'>
-														{data.universities.map((uni, index) => (
-															<li key={index}>{uni}</li>
-														))}
-													</ul>
-												</div>
-												<div>
-													<h4 className='font-semibold text-lg mb-2 text-purple-700'>
-														Popular Courses
-													</h4>
-													<ul className='list-disc pl-5 space-y-1'>
-														{data.courses.map((course, index) => (
-															<li key={index}>{course}</li>
-														))}
-													</ul>
-												</div>
-											</div>
-										</CardContent>
-									</Card>
-								</TabsContent>
+						<div className='flex flex-wrap gap-4 mb-8 justify-center'>
+							<Select onValueChange={value => setCountryFilter(value)}>
+								<SelectTrigger className='w-[180px] bg-purple-700'>
+									<SelectValue placeholder='Filter by Country' />
+								</SelectTrigger>
+								<SelectContent>
+									<SelectItem value='All'>All Countries</SelectItem>
+									<SelectItem value='USA'>USA</SelectItem>
+									<SelectItem value='Canada'>Canada</SelectItem>
+								</SelectContent>
+							</Select>
+							<Select onValueChange={value => setCostFilter(value)}>
+								<SelectTrigger className='w-[180px] bg-purple-700'>
+									<SelectValue placeholder='Filter by Cost' />
+								</SelectTrigger>
+								<SelectContent>
+									<SelectItem value='All'>All Costs</SelectItem>
+									<SelectItem value='Under $10,000'>Under $10,000</SelectItem>
+									<SelectItem value='$10,000 - $15,000'>
+										$10,000 - $15,000
+									</SelectItem>
+									<SelectItem value='Over $15,000'>Over $15,000</SelectItem>
+								</SelectContent>
+							</Select>
+						</div>
+						<div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6'>
+							{filteredUniversities.map((university, index) => (
+								<Card
+									key={index}
+									className='bg-white hover:shadow-lg transition-all duration-300'>
+									<CardHeader>
+										<CardTitle className='text-lg'>{university.name}</CardTitle>
+									</CardHeader>
+									<CardContent>
+										<div className='flex items-center mb-2'>
+											<MapPin className='h-5 w-5 mr-2 text-purple-500' />
+											<p className='text-gray-600'>{university.country}</p>
+										</div>
+										<div className='flex items-center'>
+											<DollarSign className='h-5 w-5 mr-2 text-green-500' />
+											<p className='font-semibold text-purple-600'>
+												{university.fee} per year
+											</p>
+										</div>
+									</CardContent>
+								</Card>
 							))}
-						</Tabs>
+						</div>
 					</div>
 				</section>
 
@@ -451,11 +486,12 @@ export default function StudentConsultancy() {
 								</ul>
 							</div>
 							<div className='relative h-[400px] rounded-lg overflow-hidden shadow-2xl scroll-animate'>
-								<img
+								<Image
 									src='/learning.svg'
 									alt='Students Studying Abroad'
-									className='object-cover'
-									fill
+									layout='fill'
+									objectFit='cover'
+                  quality={100}
 								/>
 							</div>
 						</div>
@@ -488,13 +524,12 @@ export default function StudentConsultancy() {
 									className='border-purple-300 focus:border-purple-500 transition-all duration-300'
 									required
 								/>
-
 								<Textarea
 									name='message'
 									placeholder='Your Message'
 									value={formData.message}
 									onChange={handleChange}
-									className='border-purple-300 focus:border-purple-500 transition-all duration-300 text-cyan-400'
+									className='border-purple-300 focus:border-purple-500 transition-all duration-300'
 									required
 								/>
 								<Button

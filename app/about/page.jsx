@@ -10,11 +10,25 @@ import {
 	CardHeader,
 	CardTitle
 } from '../../components/ui/card'
-
-import { Users, Target, TrendingUp, Award } from 'lucide-react'
+import {
+	Tabs,
+	TabsContent,
+	TabsList,
+	TabsTrigger
+} from '../../components/ui/tabs'
+import {
+	Users,
+	Target,
+	TrendingUp,
+	Award,
+	ChevronDown,
+	ChevronUp
+} from 'lucide-react'
+import { motion, AnimatePresence } from 'framer-motion'
 
 export default function About() {
 	const [isVisible, setIsVisible] = useState(false)
+	const [expandedMember, setExpandedMember] = useState(null)
 
 	useEffect(() => {
 		setIsVisible(true)
@@ -32,34 +46,59 @@ export default function About() {
 
 	const teamMembers = [
 		{
-			name: 'Asif',
-			role: 'CEO',
-			image: '/asif.jpeg',
+			name: 'Redwanul Farabi Muttaki',
+			role: 'Managing Director',
+			image: '/muttaki.jpg',
 			description:
-				'Visionary leader with over 20 years of experience in global trade and education.'
+				"RFM International, under the leadership of Managing Director Redwanul Farabi Muttaki, is a versatile company providing services in Export-Import, Manpower consultancy, Student abroad consultancy, Real estate, and Tourism. With a BBA in Management and an MBA in Strategic and International Management from the University of Dhaka, Mr. Farabi brings deep expertise and strategic vision to the company. His leadership has driven RFM International's growth across diverse sectors, ensuring high-quality, client-focused solutions while contributing to Bangladesh's economic progress and expanding our global presence."
 		},
 		{
-			name: 'Asif',
-			role: 'COO',
-			image: '/asif.jpeg',
+			name: 'Omar Faruk Tarek',
+			role: 'Chairman',
+			image: '/omar.jpg',
 			description:
-				'Operations expert ensuring smooth functioning of our diverse service offerings.'
+				'RFM International thrives under the guidance of our esteemed Chairman, Omar Faruk Tarek. With vast experience and a forward-thinking approach, Mr. Faruk plays a pivotal role in shaping the strategic direction of the company. His leadership has been instrumental in establishing RFM International as a trusted name in export, import, manpower consultancy, student abroad consultancy, real estate, and tourism. Committed to excellence and innovation, Omar Faruk Tarek ensures that the company consistently delivers superior services to meet the evolving needs of our clients globally.'
 		},
 		{
-			name: 'Asif',
-			role: 'CFO',
-			image: '/asif.jpeg',
+			name: 'Kofil Chowdhury',
+			role: 'Financial Advisor',
+			image: '/kofil.jpg',
 			description:
-				'Financial strategist driving sustainable growth and fiscal responsibility.'
+				"Our financial strategy is guided by Kofil Chowdhury, Assistant Vice President (AVP) at IFIC Bank Ltd. As the Financial Advisor for RFM International, Mr. Chowdhury brings a wealth of experience in banking and financial management. His expertise ensures that RFM International's financial planning and operations are robust, supporting growth across our diverse sectors, including export, import, manpower consultancy, student abroad consultancy, real estate, and tourism. With his sound financial guidance, Kofil Chowdhury plays a crucial role in maintaining the company's fiscal health and success."
 		},
 		{
-			name: 'Asif',
-			role: 'Head of Marketing',
-			image: '/asif.jpeg',
+			name: 'Mahfujul Anam Jisan',
+			role: 'Patron',
+			image: '/jisan.jpg',
 			description:
-				'Creative mind behind our global brand presence and customer engagement strategies.'
+				"Mahfuz Anam Jisan, the esteemed patron of RFM International, plays a vital role in supporting the company's vision and growth. His unwavering commitment and guidance have been instrumental in helping RFM International thrive across various sectors, including export, import, manpower consultancy, student abroad consultancy, real estate, and tourism. Mr. Jisan's patronage continues to inspire innovation and excellence, contributing to the company's success in both local and international markets."
+		},
+		{
+			name: 'Mohsina Sharmin Nishat',
+			role: 'Advisor, Student Consultancy',
+			image: '/nishat.jpg',
+			description:
+				'Mohsina Sharmin Nishat serves as an advisor to RFM Student Consultancy, bringing her vast expertise in the education sector to guide our consultancy services. As the Vice Principal of Daffodil International School and College, her deep knowledge and experience in academic management ensure that RFM Student Consultancy provides students with the best guidance for pursuing education abroad. Her role is crucial in helping students make informed decisions about their educational pathways.'
+		},
+		{
+			name: 'Mukcitin Faruki Mughda',
+			role: 'Director of Digital Marketing',
+			image: '/mughdo.jpg',
+			description:
+				"Mukcitin Faruki Mugdha serves as the Director of Digital Marketing at RFM International. With expertise in digital marketing and social media monetization, he leads the company's online presence and marketing strategies. His deep understanding of the digital landscape ensures that RFM International stays ahead in engaging with clients and expanding its reach through innovative and effective marketing campaigns."
+		},
+		{
+			name: 'Ferdouse Begum',
+			role: 'Co-Chairman',
+			image: '/ferdouse.jpg',
+			description:
+				'Ferdouse Begum serves as the Co-Chairman of RFM International, playing a key role in the leadership and strategic direction of the company. Her dedication and expertise help drive the growth and success of RFM International. As Co-Chairman, Ferdouse Begum is committed to ensuring that the company continues to deliver excellence in all its endeavors.'
 		}
 	]
+
+	const toggleMemberExpansion = name => {
+		setExpandedMember(expandedMember === name ? null : name)
+	}
 
 	return (
 		<div className='flex flex-col min-h-screen bg-gradient-to-b from-gray-900 via-gray-800 to-gray-700'>
@@ -90,10 +129,10 @@ export default function About() {
 									Our Story
 								</h2>
 								<p className='text-gray-600 mb-6'>
-									RFM Inc was founded in 2005 with a vision to revolutionize the
-									way businesses approach global trade and education. Our
-									journey began with a small team of passionate experts who
-									believed in the power of connecting people across borders.
+									RFM Inc was founded with a vision to revolutionize the way
+									businesses approach global trade and education. Our journey
+									began with a small team of passionate experts who believed in
+									the power of connecting people across borders.
 								</p>
 								<p className='text-gray-600 mb-6'>
 									Over the years, we have grown into a multifaceted
@@ -171,31 +210,133 @@ export default function About() {
 						<h2 className='text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-center mb-12 text-gray-800'>
 							Meet Our Team
 						</h2>
-						<div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8'>
-							{teamMembers.map((member, index) => (
-								<Card
-									key={index}
-									className='scroll-animate bg-gray-50 hover:shadow-lg transition-all duration-300 group'>
-									<CardHeader className='relative overflow-hidden'>
-										<div className='relative w-full h-48 mb-4'>
-											<Image
-												src={member.image}
-												alt={member.name}
-												className='object-cover rounded-lg transition-transform duration-300'
-												fill
-											/>
-											<div className='absolute inset-0 bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center p-4'>
-												<p className='text-white text-center w-full'>
-													{member.description}
-												</p>
-											</div>
-										</div>
-										<CardTitle>{member.name}</CardTitle>
-										<CardDescription>{member.role}</CardDescription>
-									</CardHeader>
-								</Card>
-							))}
-						</div>
+						<Tabs defaultValue='leadership' className='w-full mb-8'>
+							<TabsList className='grid w-full grid-cols-2 lg:max-w-[400px] mx-auto'>
+								<TabsTrigger value='leadership'>Leadership</TabsTrigger>
+								<TabsTrigger value='advisors'>Advisors</TabsTrigger>
+							</TabsList>
+							<TabsContent value='leadership'>
+								<div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-8'>
+									{teamMembers
+										.filter(member =>
+											[
+												'Managing Director',
+												'Chairman',
+												'Co-Chairman',
+												'Director of Digital Marketing'
+											].includes(member.role)
+										)
+										.map((member, index) => (
+											<Card
+												key={index}
+												className='scroll-animate bg-gray-50 hover:shadow-lg transition-all duration-300'>
+												<CardHeader className='relative overflow-hidden'>
+													<div className='relative w-full h-64 mb-4 bg-gray-200'>
+														<Image
+															src={member.image}
+															alt={member.name}
+															className='object-contain rounded-lg'
+															fill
+														/>
+													</div>
+													<CardTitle>{member.name}</CardTitle>
+													<CardDescription>{member.role}</CardDescription>
+												</CardHeader>
+												<CardContent>
+													<AnimatePresence>
+														{expandedMember === member.name && (
+															<motion.div
+																initial={{ opacity: 0, height: 0 }}
+																animate={{ opacity: 1, height: 'auto' }}
+																exit={{ opacity: 0, height: 0 }}
+																transition={{ duration: 0.3 }}>
+																<p className='text-sm text-gray-600 mt-2'>
+																	{member.description}
+																</p>
+															</motion.div>
+														)}
+													</AnimatePresence>
+													<Button
+														variant='ghost'
+														className='w-full mt-4'
+														onClick={() => toggleMemberExpansion(member.name)}>
+														{expandedMember === member.name ? (
+															<>
+																<ChevronUp className='mr-2 h-4 w-4' /> Read Less
+															</>
+														) : (
+															<>
+																<ChevronDown className='mr-2 h-4 w-4' /> Read
+																More
+															</>
+														)}
+													</Button>
+												</CardContent>
+											</Card>
+										))}
+								</div>
+							</TabsContent>
+							<TabsContent value='advisors'>
+								<div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-8'>
+									{teamMembers
+										.filter(member =>
+											[
+												'Financial Advisor',
+												'Advisor, Student Consultancy',
+												'Patron'
+											].includes(member.role)
+										)
+										.map((member, index) => (
+											<Card
+												key={index}
+												className='scroll-animate bg-gray-50 hover:shadow-lg transition-all duration-300'>
+												<CardHeader className='relative overflow-hidden'>
+													<div className='relative w-full h-64 mb-4 bg-gray-200'>
+														<Image
+															src={member.image}
+															alt={member.name}
+															className='object-contain rounded-lg'
+															fill
+														/>
+													</div>
+													<CardTitle>{member.name}</CardTitle>
+													<CardDescription>{member.role}</CardDescription>
+												</CardHeader>
+												<CardContent>
+													<AnimatePresence>
+														{expandedMember === member.name && (
+															<motion.div
+																initial={{ opacity: 0, height: 0 }}
+																animate={{ opacity: 1, height: 'auto' }}
+																exit={{ opacity: 0, height: 0 }}
+																transition={{ duration: 0.3 }}>
+																<p className='text-sm text-gray-600 mt-2'>
+																	{member.description}
+																</p>
+															</motion.div>
+														)}
+													</AnimatePresence>
+													<Button
+														variant='ghost'
+														className='w-full mt-4'
+														onClick={() => toggleMemberExpansion(member.name)}>
+														{expandedMember === member.name ? (
+															<>
+																<ChevronUp className='mr-2 h-4 w-4' /> Read Less
+															</>
+														) : (
+															<>
+																<ChevronDown className='mr-2 h-4 w-4' /> Read
+																More
+															</>
+														)}
+													</Button>
+												</CardContent>
+											</Card>
+										))}
+								</div>
+							</TabsContent>
+						</Tabs>
 					</div>
 				</section>
 

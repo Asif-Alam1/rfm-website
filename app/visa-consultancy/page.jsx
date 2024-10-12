@@ -304,6 +304,7 @@ export default function VisaConsultancy() {
 									alt='Visa Consultation'
 									className='object-cover'
 									fill
+									quality={100}
 								/>
 							</div>
 						</div>

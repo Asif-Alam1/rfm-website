@@ -236,6 +236,7 @@ export default function Home() {
 									alt='RFM Inc Team'
 									layout='fill'
 									objectFit='cover'
+                  quality={100}
 								/>
 							</div>
 						</div>
