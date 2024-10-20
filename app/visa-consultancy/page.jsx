@@ -26,7 +26,8 @@ import {
 	Plane,
 	FileCheck,
 	Globe,
-	CheckCircle
+	CheckCircle,
+	MapPin
 } from 'lucide-react'
 import toast from 'react-hot-toast'
 
@@ -116,6 +117,16 @@ export default function VisaConsultancy() {
 		}
 	]
 
+	const workVisaCountries = [
+		'Serbia',
+		'Russia',
+		'Croatia',
+		'Slovakia',
+		'Hungary',
+		'Romania'
+	]
+	const visitVisaCountries = ['Italy', 'Canada', 'Brazil']
+
 	return (
 		<div className='flex flex-col min-h-screen bg-gradient-to-b from-yellow-700 via-yellow-600 to-amber-500'>
 			<main className='flex-1 pt-16'>
@@ -167,6 +178,52 @@ export default function VisaConsultancy() {
 				</section>
 
 				<section className='w-full py-12 md:py-24 lg:py-32 bg-gradient-to-b from-yellow-100 to-white'>
+					<div className='container px-4 md:px-6'>
+						<h2 className='text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-center mb-12 text-yellow-800'>
+							Countries We Serve
+						</h2>
+						<div className='grid grid-cols-1 md:grid-cols-2 gap-8'>
+							<Card className='bg-gradient-to-br from-yellow-50 to-white hover:shadow-lg transition-all duration-300'>
+								<CardHeader>
+									<CardTitle className='flex items-center'>
+										<Briefcase className='h-6 w-6 mr-2 text-yellow-600' />
+										Work Visa Countries
+									</CardTitle>
+								</CardHeader>
+								<CardContent>
+									<ul className='grid grid-cols-2 gap-2'>
+										{workVisaCountries.map((country, index) => (
+											<li key={index} className='flex items-center'>
+												<MapPin className='h-5 w-5 mr-2 text-yellow-500' />
+												{country}
+											</li>
+										))}
+									</ul>
+								</CardContent>
+							</Card>
+							<Card className='bg-gradient-to-br from-yellow-50 to-white hover:shadow-lg transition-all duration-300'>
+								<CardHeader>
+									<CardTitle className='flex items-center'>
+										<Plane className='h-6 w-6 mr-2 text-yellow-600' />
+										Visit Visa Countries
+									</CardTitle>
+								</CardHeader>
+								<CardContent>
+									<ul className='grid grid-cols-2 gap-2'>
+										{visitVisaCountries.map((country, index) => (
+											<li key={index} className='flex items-center'>
+												<MapPin className='h-5 w-5 mr-2 text-yellow-500' />
+												{country}
+											</li>
+										))}
+									</ul>
+								</CardContent>
+							</Card>
+						</div>
+					</div>
+				</section>
+
+				<section className='w-full py-12 md:py-24 lg:py-32 bg-gradient-to-b from-white to-yellow-100'>
 					<div className='container px-4 md:px-6'>
 						<h2 className='text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-center mb-12 text-yellow-800'>
 							Visa Application Process
@@ -337,13 +394,12 @@ export default function VisaConsultancy() {
 									className='border-yellow-300 focus:border-yellow-500 transition-all duration-300'
 									required
 								/>
-
 								<Textarea
 									name='message'
 									placeholder='Tell us about your visa requirements'
 									value={formData.message}
 									onChange={handleChange}
-									className='border-yellow-300 focus:border-yellow-500 transition-all duration-300 text-cyan-400'
+									className='border-yellow-300 focus:border-yellow-500 transition-all duration-300'
 									required
 								/>
 								<Button
