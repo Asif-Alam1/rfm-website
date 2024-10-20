@@ -48,20 +48,25 @@ const Navbar = () => {
 		<nav
 			ref={navRef}
 			className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-				scrolled ? 'bg-cyan-700/90 backdrop-blur-md' : 'bg-transparent'
+				scrolled ? 'bg-sky-900/90 backdrop-blur-md' : 'bg-transparent'
 			}`}>
 			<div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8'>
 				<div className='flex items-center justify-between h-16'>
 					<div className='flex-shrink-0'>
 						<Link href='/' className='flex items-center'>
-							<Image
-								className='h-16 w-auto'
-								src='/logo.png'
-								alt='RFM Inc Logo'
-								width={32}
-								height={32}
-								quality={100}
-							/>
+							<div className='relative w-24 h-16'>
+								<Image
+									src='/logo.png'
+									alt='RFM Inc Logo'
+									fill
+									sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw'
+									style={{
+										objectFit: 'contain',
+										objectPosition: 'left center'
+									}}
+									priority
+								/>
+							</div>
 						</Link>
 					</div>
 					<div className='hidden md:block'>

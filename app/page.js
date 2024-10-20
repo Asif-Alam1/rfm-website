@@ -103,11 +103,11 @@ export default function Home() {
 						<div className='flex flex-col items-center space-y-4 text-center'>
 							<div className='space-y-2'>
 								<h1 className='text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl lg:text-7xl/none bg-clip-text text-transparent bg-gradient-to-r from-white to-yellow-300'>
-									Global Solutions at Your Fingertips
+									Welcome To RFM International
 								</h1>
 								<p className='mx-auto max-w-[700px] text-yellow-200 bg-gray-400/25 rounded-xl md:text-xl lg:text-2xl'>
-									RFM Inc: Your trusted partner for Import-Export, Student
-									Consultancy, and Visa Services
+									Global Solutions at your fingertips, Your trusted partner for
+									Import-Export, Student Consultancy, and Visa Services
 								</p>
 							</div>
 							<div className='space-x-4'>
@@ -236,7 +236,7 @@ export default function Home() {
 									alt='RFM Inc Team'
 									layout='fill'
 									objectFit='cover'
-                  quality={100}
+									quality={100}
 								/>
 							</div>
 						</div>
