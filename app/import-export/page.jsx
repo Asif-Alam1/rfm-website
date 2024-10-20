@@ -1,7 +1,6 @@
 'use client'
 
 import { useState, useEffect } from 'react'
-
 import { Button } from '../../components/ui/button'
 import { Input } from '../../components/ui/input'
 import { Textarea } from '../../components/ui/textarea'
@@ -26,7 +25,14 @@ import {
 	Truck,
 	Package,
 	ArrowRight,
-	CheckCircle
+	CheckCircle,
+	Shirt,
+	Fish,
+	Carrot,
+	Palette,
+	Scissors,
+	Droplet,
+	Briefcase
 } from 'lucide-react'
 import Image from 'next/image'
 import Link from 'next/link'
@@ -39,6 +45,7 @@ export default function ImportExport() {
 		email: '',
 		message: ''
 	})
+
 	useEffect(() => {
 		setIsVisible(true)
 		const handleScroll = () => {
@@ -67,7 +74,7 @@ export default function ImportExport() {
 				toast.success('Message sent successfully')
 				setFormData({ name: '', email: '', message: '' })
 			} else {
-				toast.success('Message failed to send')
+				toast.error('Message failed to send')
 			}
 		} catch (error) {
 			console.error('Error sending message:', error)
@@ -111,6 +118,16 @@ export default function ImportExport() {
 			title: 'Custom Clearance',
 			description: 'Streamlined customs processes and documentation'
 		}
+	]
+
+	const products = [
+		{ icon: Palette, name: 'Handicrafts' },
+		{ icon: Fish, name: 'Fishes' },
+		{ icon: Carrot, name: 'Vegetables' },
+		{ icon: Shirt, name: 'Clothings' },
+		{ icon: Package, name: 'Plastic Products' },
+		{ icon: Scissors, name: 'Wigs' },
+		{ icon: Briefcase, name: 'Leathers' }
 	]
 
 	return (
@@ -165,6 +182,28 @@ export default function ImportExport() {
 				</section>
 
 				<section className='w-full py-12 md:py-24 lg:py-32 bg-gradient-to-b from-blue-100 to-white'>
+					<div className='container px-4 md:px-6'>
+						<h2 className='text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-center mb-12 text-blue-800'>
+							Our Product Categories
+						</h2>
+						<div className='grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8'>
+							{products.map((product, index) => (
+								<Card
+									key={index}
+									className='scroll-animate bg-white hover:shadow-lg transition-all duration-300'>
+									<CardContent className='flex flex-col items-center justify-center p-6'>
+										<product.icon className='h-12 w-12 mb-4 text-blue-600' />
+										<CardTitle className='text-center'>
+											{product.name}
+										</CardTitle>
+									</CardContent>
+								</Card>
+							))}
+						</div>
+					</div>
+				</section>
+
+				<section className='w-full py-12 md:py-24 lg:py-32 bg-gradient-to-b from-white to-blue-100'>
 					<div className='container px-4 md:px-6'>
 						<h2 className='text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-center mb-12 text-blue-800'>
 							Import-Export Process
@@ -283,6 +322,7 @@ export default function ImportExport() {
 						</Tabs>
 					</div>
 				</section>
+
 				<section className='w-full py-12 md:py-24 lg:py-32 bg-blue-900 text-white'>
 					<div className='container px-4 md:px-6'>
 						<div className='grid grid-cols-1 md:grid-cols-2 gap-12 items-center'>
@@ -306,7 +346,7 @@ export default function ImportExport() {
 								</ul>
 							</div>
 							<div className='relative h-[400px] rounded-lg overflow-hidden shadow-2xl scroll-animate'>
-								<img
+								<Image
 									src='/world.svg'
 									alt='Global Trade'
 									className='object-cover'
@@ -316,11 +356,12 @@ export default function ImportExport() {
 						</div>
 					</div>
 				</section>
+
 				<section
 					className='w-full py-12 md:py-24 lg:py-32 bg-gradient-to-b from-white to-blue-50'
 					id='contact'>
 					<div className='container px-4 md:px-6'>
-						<h2 className='text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-center mb-12 text-blue-800'>
+						<h2 className='text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl  text-center mb-12 text-blue-800'>
 							Get a Quote
 						</h2>
 						<div className='max-w-2xl mx-auto bg-white p-8 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300'>
@@ -347,7 +388,7 @@ export default function ImportExport() {
 									placeholder='Your Message'
 									value={formData.message}
 									onChange={handleChange}
-									className='border-blue-300 focus:border-blue-500 transition-all duration-300 text-cyan-400'
+									className='border-blue-300 focus:border-blue-500 transition-all duration-300'
 									required
 								/>
 								<Button
