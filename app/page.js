@@ -107,7 +107,7 @@ export default function Home() {
 								</h1>
 								<p className='mx-auto max-w-[700px] text-yellow-200 bg-gray-400/25 rounded-xl md:text-xl lg:text-2xl'>
 									Global Solutions at your fingertips, Your trusted partner for
-									Import-Export, Student Consultancy, and Visa Services
+									Import-Export, Student Consultancy, Home Solutions and Visa Services
 								</p>
 							</div>
 							<div className='space-x-4'>
@@ -200,14 +200,14 @@ export default function Home() {
 								</h2>
 								<p className='text-cyan-600 mb-4'>
 									RFM Inc is a leading consultancy firm specializing in
-									import-export facilitation, student guidance, and visa
+									import-export facilitation, student guidance, Home Solutions and visa
 									services. With years of experience and a dedicated team of
 									experts, we have helped countless individuals and businesses
 									achieve their international goals.
 								</p>
 								<p className='text-cyan-600 mb-6'>
 									Our mission is to bridge global opportunities, making
-									international trade and education accessible to all. We pride
+									international trade and education and home accessible to all. We pride
 									ourselves on our personalized approach, ensuring each client
 									receives tailored solutions to meet their unique needs.
 								</p>
