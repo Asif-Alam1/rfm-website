@@ -199,6 +199,54 @@ export default function RealEstate() {
 					</div>
 				</section>
 
+				<section className='w-full py-12 md:py-24 lg:py-32 bg-white'>
+					<div className='container px-4 md:px-6'>
+						<h2 className='text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-center mb-12 text-green-800'>
+							Our Current Projects
+						</h2>
+						<div className='max-w-4xl mx-auto'>
+							<Tabs defaultValue='land' className='bg-transparent'>
+								<TabsList className='grid w-full grid-cols-2 rounded-md p-1 bg-green-50 border border-green-100'>
+									<TabsTrigger value='land' className='text-green-800 py-3'>Land</TabsTrigger>
+									<TabsTrigger value='flat' className='text-green-800 py-3'>Flat</TabsTrigger>
+								</TabsList>
+								<TabsContent value='land' className='mt-6'>
+									<div className='grid grid-cols-1 md:grid-cols-2 gap-6'>
+										{[
+											{ title: 'South Banasree', desc: 'Well-located land plots within an established residential neighborhood, perfect for building your dream home or investment.' },
+											{ title: 'Nandipara, Khilgaon', desc: 'Spacious parcels in Nandipara close to amenities and main transport routes — ideal for residential or mixed-use development.' },
+											{ title: 'Shah Mosque Housing, Mohammadpur', desc: 'Attractive land opportunities in Mohammadpur with solid community infrastructure and growth potential.' },
+											{ title: 'Chandrima Housing, Mohammadpur', desc: 'Established housing area offering conveniently located plots for homeowners and investors.' },
+											{ title: 'Narayanganj', desc: 'Strategically positioned land outside the city with strong redevelopment and investment prospects.' }
+										].map((project, idx) => (
+											<Card key={idx} className='bg-white shadow-sm hover:shadow-lg transition-transform duration-300 hover:-translate-y-1'>
+												<CardHeader>
+													<CardTitle className='text-green-700'>{project.title}</CardTitle>
+													<CardDescription className='text-sm text-slate-600'>{project.desc}</CardDescription>
+												</CardHeader>
+											</Card>
+										))}
+									</div>
+								</TabsContent>
+								<TabsContent value='flat' className='mt-6'>
+									<div className='grid grid-cols-1 md:grid-cols-2 gap-6'>
+										{[
+											{ title: 'Chandrima Flat', desc: 'Modern apartment units in Chandrima — thoughtfully designed, well-finished flats in a desirable location.' }
+										].map((project, idx) => (
+											<Card key={idx} className='bg-white shadow-sm hover:shadow-lg transition-transform duration-300 hover:-translate-y-1'>
+												<CardHeader>
+													<CardTitle className='text-green-700'>{project.title}</CardTitle>
+													<CardDescription className='text-sm text-slate-600'>{project.desc}</CardDescription>
+												</CardHeader>
+											</Card>
+										))}
+									</div>
+								</TabsContent>
+							</Tabs>
+						</div>
+					</div>
+				</section>
+
 				<section
 					className='w-full py-12 md:py-24 lg:py-32 bg-white'
 					id='properties'>
