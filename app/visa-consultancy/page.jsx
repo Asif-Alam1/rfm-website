@@ -102,6 +102,11 @@ export default function VisaConsultancy() {
 		},
 		{
 			icon: Plane,
+			title: 'Umrah Hajj Visa',
+			description: 'For Performing Hajj with Family'
+		},
+		{
+			icon: Plane,
 			title: 'Tourist Visa',
 			description: 'For travelers exploring new destinations'
 		},
@@ -118,14 +123,33 @@ export default function VisaConsultancy() {
 	]
 
 	const workVisaCountries = [
+		'Italy',
 		'Serbia',
 		'Russia',
-		'Croatia',
-		'Slovakia',
+		'Sweden',
+		'Netherlands',
 		'Hungary',
 		'Romania'
+		'Qatar',
+		'Kuwait',
+		'Saudi-Arabia',
 	]
-	const visitVisaCountries = ['Italy', 'Canada', 'Brazil']
+	const visitVisaCountries = [
+		'USA',
+		'UK',
+		'Australia',
+		'Germany',
+		'Denmark',
+		'Italy', 
+		'Canada', 
+		'Brazil'
+		'Japan',
+		'China',
+		'India',
+		'Singapore',
+		'Malaysia',
+		'Thailand',
+	]
 
 	return (
 		<div className='flex flex-col min-h-screen bg-gradient-to-b from-yellow-700 via-yellow-600 to-amber-500'>

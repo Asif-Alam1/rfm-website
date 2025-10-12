@@ -45,19 +45,27 @@ export default function About() {
 	}, [])
 
 	const teamMembers = [
-		{
-			name: 'Redwanul Farabi Muttaki',
-			role: 'Managing Director',
-			image: '/muttaki.jpg',
-			description:
-				"RFM International, under the leadership of Managing Director Redwanul Farabi Muttaki, is a versatile company providing services in Export-Import, Manpower consultancy, Student abroad consultancy, Real estate, and Tourism. With a BBA in Management and an MBA in Strategic and International Management from the University of Dhaka, Mr. Farabi brings deep expertise and strategic vision to the company. His leadership has driven RFM International's growth across diverse sectors, ensuring high-quality, client-focused solutions while contributing to Bangladesh's economic progress and expanding our global presence."
-		},
+	
 		{
 			name: 'Omar Faruk Tarek',
 			role: 'Chairman',
 			image: '/omar.jpg',
 			description:
 				'RFM International thrives under the guidance of our esteemed Chairman, Omar Faruk Tarek. With vast experience and a forward-thinking approach, Mr. Faruk plays a pivotal role in shaping the strategic direction of the company. His leadership has been instrumental in establishing RFM International as a trusted name in export, import, manpower consultancy, student abroad consultancy, real estate, and tourism. Committed to excellence and innovation, Omar Faruk Tarek ensures that the company consistently delivers superior services to meet the evolving needs of our clients globally.'
+		},
+		{
+			name: 'Ferdouse Begum',
+			role: 'Co-Chairman',
+			image: '/ferdouse.jpg',
+			description:
+				'Ferdouse Begum serves as the Co-Chairman of RFM International, playing a key role in the leadership and strategic direction of the company. Her dedication and expertise help drive the growth and success of RFM International. As Co-Chairman, Ferdouse Begum is committed to ensuring that the company continues to deliver excellence in all its endeavors.'
+		},
+		{
+			name: 'Redwanul Farabi Muttaki',
+			role: 'Managing Director',
+			image: '/muttaki.jpg',
+			description:
+				"RFM International, under the leadership of Managing Director Redwanul Farabi Muttaki, is a versatile company providing services in Export-Import, Manpower consultancy, Student abroad consultancy, Real estate, and Tourism. With a BBA in Management and an MBA in Strategic and International Management from the University of Dhaka, Mr. Farabi brings deep expertise and strategic vision to the company. His leadership has driven RFM International's growth across diverse sectors, ensuring high-quality, client-focused solutions while contributing to Bangladesh's economic progress and expanding our global presence."
 		},
 		{
 			name: 'Kofil Chowdhury',
@@ -86,14 +94,8 @@ export default function About() {
 			image: '/mughdo.jpg',
 			description:
 				"Mukcitin Faruki Mugdha serves as the Director of Digital Marketing at RFM International. With expertise in digital marketing and social media monetization, he leads the company's online presence and marketing strategies. His deep understanding of the digital landscape ensures that RFM International stays ahead in engaging with clients and expanding its reach through innovative and effective marketing campaigns."
-		},
-		{
-			name: 'Ferdouse Begum',
-			role: 'Co-Chairman',
-			image: '/ferdouse.jpg',
-			description:
-				'Ferdouse Begum serves as the Co-Chairman of RFM International, playing a key role in the leadership and strategic direction of the company. Her dedication and expertise help drive the growth and success of RFM International. As Co-Chairman, Ferdouse Begum is committed to ensuring that the company continues to deliver excellence in all its endeavors.'
 		}
+		
 	]
 
 	const toggleMemberExpansion = name => {

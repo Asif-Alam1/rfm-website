@@ -29,6 +29,7 @@ export async function POST(request) {
         <p>You have a new contact form submission from:</p>
         <ul>
           <li><strong>Name:</strong> ${name}</li>
+		  <li><strong>Number:</strong> ${phonenumber}</li>
           <li><strong>Email:</strong> ${email}</li>
           <li><strong>Subject:</strong> ${subject}</li>
           <li><strong>Message:</strong> ${message}</li>

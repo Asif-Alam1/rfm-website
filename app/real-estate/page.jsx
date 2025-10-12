@@ -93,8 +93,13 @@ export default function RealEstate() {
 		},
 		{
 			icon: Search,
-			title: 'Property Valuation',
-			description: 'Get accurate and up-to-date property valuations'
+			title: 'Lands',
+			description: 'Buy Lands for you or for your Company around the world'
+		},
+		{
+			icon: Briefcase,
+			title: 'Lands Share',
+			description: 'Buy Land Share with other shareholders'
 		},
 		{
 			icon: DollarSign,
@@ -176,7 +181,10 @@ export default function RealEstate() {
 										'Extensive Property Network',
 										'Personalized Service',
 										'Market Insights',
-										'Seamless Transactions'
+										'Seamless Transactions',
+			                            'Buy Land Shares',
+										'Buy Lands for your Company',
+			
 									].map((item, index) => (
 										<li key={index} className='flex items-center'>
 											<Home className='h-6 w-6 mr-2 text-green-300' />
