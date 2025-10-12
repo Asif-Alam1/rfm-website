@@ -17,13 +17,7 @@ import {
 	TabsList,
 	TabsTrigger
 } from '../../components/ui/tabs'
-import {
-	Select,
-	SelectContent,
-	SelectItem,
-	SelectTrigger,
-	SelectValue
-} from '../../components/ui/select'
+// Note: Removed Select filter UI — universities will be grouped by country instead
 import {
 	GraduationCap,
 	BookOpen,
@@ -49,8 +43,7 @@ export default function StudentConsultancy() {
 		subject: '',
 		message: ''
 	})
-	const [countryFilter, setCountryFilter] = useState('All')
-	const [costFilter, setCostFilter] = useState('All')
+	// no filters: universities will be shown grouped by country
 
 	const handleSubmit = async e => {
 		e.preventDefault()
@@ -183,20 +176,31 @@ export default function StudentConsultancy() {
 		{ name: 'Campbellsville University', fee: '$10,000', country: 'USA' },
 		{ name: 'University of Potomac', fee: '$8,000', country: 'USA' }
 	]
+	// group partner universities by country so UI shows sections per country
+	const groupedUniversities = partnerUniversities.reduce((acc, uni) => {
+		const country = uni.country || 'Other'
+		if (!acc[country]) acc[country] = []
+		acc[country].push(uni)
+		return acc
+	}, {})
 
-	const filteredUniversities = partnerUniversities.filter(uni => {
-		const matchesCountry =
-			countryFilter === 'All' || uni.country === countryFilter
-		const feeLower = parseInt(uni.fee.replace(/[^0-9]/g, ''))
-		const matchesCost =
-			costFilter === 'All' ||
-			(costFilter === 'Under $10,000' && feeLower < 10000) ||
-			(costFilter === '$10,000 - $15,000' &&
-				feeLower >= 10000 &&
-				feeLower <= 15000) ||
-			(costFilter === 'Over $15,000' && feeLower > 15000)
-		return matchesCountry && matchesCost
-	})
+	// preferred display order; user will add more universities for these countries
+	const countriesOrder = [
+		'USA',
+		'Canada',
+		'UK',
+		'Italy',
+		'Cyprus',
+		'South Korea',
+		'Japan',
+		'Australia',
+		'Denmark',
+		'Newzealand'
+	]
+
+	const allCountries = Array.from(
+		new Set([...countriesOrder, ...Object.keys(groupedUniversities)])
+	)
 
 	return (
 		<div className='flex flex-col min-h-screen bg-gradient-to-b from-purple-900 via-purple-800 to-indigo-700'>
@@ -401,53 +405,35 @@ export default function StudentConsultancy() {
 						<h2 className='text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-center mb-12 text-purple-800'>
 							Partner Universities
 						</h2>
-						<div className='flex flex-wrap gap-4 mb-8 justify-center'>
-							<Select onValueChange={value => setCountryFilter(value)}>
-								<SelectTrigger className='w-[180px] bg-purple-700'>
-									<SelectValue placeholder='Filter by Country' />
-								</SelectTrigger>
-								<SelectContent>
-									<SelectItem value='All'>All Countries</SelectItem>
-									<SelectItem value='USA'>USA</SelectItem>
-									<SelectItem value='Canada'>Canada</SelectItem>
-								</SelectContent>
-							</Select>
-							<Select onValueChange={value => setCostFilter(value)}>
-								<SelectTrigger className='w-[180px] bg-purple-700'>
-									<SelectValue placeholder='Filter by Cost' />
-								</SelectTrigger>
-								<SelectContent>
-									<SelectItem value='All'>All Costs</SelectItem>
-									<SelectItem value='Under $10,000'>Under $10,000</SelectItem>
-									<SelectItem value='$10,000 - $15,000'>
-										$10,000 - $15,000
-									</SelectItem>
-									<SelectItem value='Over $15,000'>Over $15,000</SelectItem>
-								</SelectContent>
-							</Select>
-						</div>
-						<div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6'>
-							{filteredUniversities.map((university, index) => (
-								<Card
-									key={index}
-									className='bg-white hover:shadow-lg transition-all duration-300'>
-									<CardHeader>
-										<CardTitle className='text-lg'>{university.name}</CardTitle>
-									</CardHeader>
-									<CardContent>
-										<div className='flex items-center mb-2'>
-											<MapPin className='h-5 w-5 mr-2 text-purple-500' />
-											<p className='text-gray-600'>{university.country}</p>
+						{/* Universities grouped by country. No filters; fees removed. */}
+						<div className='space-y-8'>
+							{allCountries.map(country => {
+								const list = groupedUniversities[country]
+								if (!list || list.length === 0) return null
+								return (
+									<section key={country} className='bg-white p-6 rounded-lg shadow-lg'>
+										<h3 className='text-2xl font-bold mb-4 text-purple-800'>{country}</h3>
+										<div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6'>
+											{list.map((university, index) => (
+												<Card
+													key={`${country}-${index}`}
+													className='bg-white hover:shadow-lg transition-all duration-300'>
+													<CardHeader>
+														<CardTitle className='text-lg'>{university.name}</CardTitle>
+													</CardHeader>
+													<CardContent>
+														<div className='flex items-center mb-2'>
+															<MapPin className='h-5 w-5 mr-2 text-purple-500' />
+															<p className='text-gray-600'>{university.country}</p>
+														</div>
+														{/* Fee removed as requested */}
+													</CardContent>
+													</Card>
+											))}
 										</div>
-										<div className='flex items-center'>
-											<DollarSign className='h-5 w-5 mr-2 text-green-500' />
-											<p className='font-semibold text-purple-600'>
-												{university.fee} per year
-											</p>
-										</div>
-									</CardContent>
-								</Card>
-							))}
+									</section>
+								)
+							})}
 						</div>
 					</div>
 				</section>

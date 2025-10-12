@@ -22,16 +22,7 @@ import {
 	Truck,
 	Package,
 	CheckCircle,
-	Shirt,
-	Fish,
-	Carrot,
-	Palette,
-	Scissors,
-	Layers,
 	ShoppingBag,
-	Factory,
-	FlaskConical,
-	Car,
 	Briefcase
 } from 'lucide-react'
 import Image from 'next/image'
@@ -108,20 +99,70 @@ export default function ImportExport() {
 			title: 'Sourcing',
 			description: 'We will source the products for you from anywhere in the world'
 		}
+		,
+		{
+			icon: ShoppingBag,
+			title: 'Dropshipping & Sourcing',
+			description: 'Sourcing and dropshipping from India & China with quality checks and fulfilment.'
+		}
 	]
 
 	const products = [
-		{ icon: Palette, name: 'Handicrafts' },
-		{ icon: Fish, name: 'Fishes' },
-		{ icon: Carrot, name: 'Vegetables' },
-		{ icon: Shirt, name: 'Clothings' },
-		{ icon: Package, name: 'Plastic Products' },
-		{ icon: Scissors, name: 'Wigs' },
-		{ icon: Layers, name: 'Leathers' },
-		{ icon: ShoppingBag, name: 'Garments' },
-		{ icon: Factory, name: 'Machinery' },
-		{ icon: FlaskConical, name: 'Chemicals' },
-		{ icon: Car, name: 'Cars' }
+		{ 
+			name: 'Handicrafts', 
+			image: 'https://images.unsplash.com/photo-1452860606245-08befc0ff44b?w=600&h=400&fit=crop',
+			description: 'Traditional & artisanal crafts'
+		},
+		{ 
+			name: 'Fishes', 
+			image: 'https://images.unsplash.com/photo-1544943910-4c1dc44aab44?w=600&h=400&fit=crop',
+			description: 'Fresh & frozen seafood'
+		},
+		{ 
+			name: 'Vegetables', 
+			image: 'https://images.unsplash.com/photo-1540420773420-3366772f4999?w=600&h=400&fit=crop',
+			description: 'Farm-fresh produce'
+		},
+		{ 
+			name: 'Clothing', 
+			image: 'https://images.unsplash.com/photo-1489987707025-afc232f7ea0f?w=600&h=400&fit=crop',
+			description: 'Fashion & apparel'
+		},
+		{ 
+			name: 'Plastic Products', 
+			image: 'https://images.unsplash.com/photo-1536939459926-301728717817?w=600&h=400&fit=crop',
+			description: 'Industrial plastic goods'
+		},
+		{ 
+			name: 'Wigs', 
+			image: 'https://images.unsplash.com/photo-1562322140-8baeececf3df?w=600&h=400&fit=crop',
+			description: 'Hair extensions & wigs'
+		},
+		{ 
+			name: 'Leather Goods', 
+			image: 'https://images.unsplash.com/photo-1590874103328-eac38a683ce7?w=600&h=400&fit=crop',
+			description: 'Premium leather products'
+		},
+		{ 
+			name: 'Garments', 
+			image: 'https://images.unsplash.com/photo-1445205170230-053b83016050?w=600&h=400&fit=crop',
+			description: 'Textile & ready-made garments'
+		},
+		{ 
+			name: 'Machinery', 
+			image: 'https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=600&h=400&fit=crop',
+			description: 'Industrial equipment'
+		},
+		{ 
+			name: 'Chemicals', 
+			image: 'https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?w=600&h=400&fit=crop',
+			description: 'Industrial chemicals'
+		},
+		{ 
+			name: 'Automobiles', 
+			image: 'https://images.unsplash.com/photo-1542362567-b07e54358753?w=600&h=400&fit=crop',
+			description: 'Vehicles & auto parts'
+		}
 	]
 	return (
 		<div className='flex flex-col min-h-screen bg-gradient-to-b from-blue-900 via-blue-800 to-cyan-700'>
@@ -179,16 +220,25 @@ export default function ImportExport() {
 						<h2 className='text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-center mb-12 text-blue-800'>
 							Our Product Categories
 						</h2>
-						<div className='grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8'>
+						<div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6'>
 							{products.map((product, index) => (
 								<Card
 									key={index}
-									className='scroll-animate bg-white hover:shadow-lg transition-all duration-300'>
-									<CardContent className='flex flex-col items-center justify-center p-6'>
-										<product.icon className='h-12 w-12 mb-4 text-blue-600' />
-										<CardTitle className='text-center'>
+									className='scroll-animate bg-white hover:shadow-2xl transition-all duration-500 overflow-hidden group cursor-pointer border-none'>
+									<div className='relative h-48 overflow-hidden'>
+										<Image
+											src={product.image}
+											alt={product.name}
+											fill
+											className='object-cover group-hover:scale-110 transition-transform duration-500'
+										/>
+										<div className='absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300'></div>
+									</div>
+									<CardContent className='p-5'>
+										<CardTitle className='text-lg mb-2 text-blue-900 group-hover:text-blue-600 transition-colors duration-300'>
 											{product.name}
 										</CardTitle>
+										<p className='text-sm text-gray-600'>{product.description}</p>
 									</CardContent>
 								</Card>
 							))}
