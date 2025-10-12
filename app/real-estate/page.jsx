@@ -26,7 +26,6 @@ import {
 	Key,
 	Briefcase
 } from 'lucide-react'
-import Link from 'next/link'
 import toast from 'react-hot-toast'
 
 export default function RealEstate() {
@@ -122,26 +121,20 @@ export default function RealEstate() {
 		<div className='flex flex-col min-h-screen bg-gradient-to-b from-green-900 via-green-800 to-emerald-700'>
 			<main className='flex-1 pt-16'>
 				<section
-					className={`w-full py-24 md:py-32 transition-all duration-1000 ease-in-out ${
+					className={`relative w-full min-h-[60vh] overflow-hidden transition-all duration-1000 ease-in-out ${
 						isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
 					}`}>
-					<div className='container px-4 md:px-6'>
-						<div className='flex flex-col items-center space-y-4 text-center'>
-							<div className='space-y-2'>
-								<h1 className='text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl lg:text-7xl/none bg-clip-text text-transparent bg-gradient-to-r from-white to-green-300'>
-									Real Estate Solutions
-								</h1>
-								<p className='mx-auto max-w-[700px] text-green-100 md:text-xl lg:text-2xl'>
-									Your trusted partner in finding the perfect property
-								</p>
-							</div>
-							<Link href='#properties'>
-								<Button className='bg-green-500 text-white hover:bg-green-600 text-lg px-6 py-3 rounded-full transition-all duration-300 hover:shadow-lg hover:scale-105'>
-									Let us Help You
-								</Button>
-							</Link>
-						</div>
+					<div className='absolute inset-0'>
+						<Image
+							src='/real-estate.jpg'
+							alt='Global real estate solutions'
+							fill
+							priority
+							className='object-cover'
+						/>
+						<div className='absolute inset-0 bg-black/40' aria-hidden='true'></div>
 					</div>
+					<span className='sr-only'>Real Estate Solutions</span>
 				</section>
 
 				<section className='w-full py-12 md:py-24 lg:py-32 bg-white'>
@@ -194,11 +187,12 @@ export default function RealEstate() {
 								</ul>
 							</div>
 							<div className='relative h-[400px] rounded-lg overflow-hidden shadow-2xl scroll-animate'>
-								<img
+								<Image
 									src='/property.svg'
 									alt='Real Estate Team'
-									className='object-cover'
 									fill
+									sizes='(min-width: 768px) 50vw, 100vw'
+									className='object-cover'
 								/>
 							</div>
 						</div>

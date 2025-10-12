@@ -18,25 +18,20 @@ import {
 	TabsTrigger
 } from '../../components/ui/tabs'
 import {
-	Globe,
-	TrendingUp,
-	BarChart,
 	ShieldCheck,
 	Truck,
 	Package,
-	ArrowRight,
 	CheckCircle,
 	Shirt,
 	Fish,
 	Carrot,
 	Palette,
 	Scissors,
-	Droplet,
-	machine,
-	cosmetics,
-	dress,
-	car,
-	chemical,
+	Layers,
+	ShoppingBag,
+	Factory,
+	FlaskConical,
+	Car,
 	Briefcase
 } from 'lucide-react'
 import Image from 'next/image'
@@ -93,7 +88,6 @@ export default function ImportExport() {
 	}
 
 	const services = [
-		
 		{
 			icon: Truck,
 			title: 'Logistics Support',
@@ -116,21 +110,18 @@ export default function ImportExport() {
 		}
 	]
 
-	const products = [ Exports
+	const products = [
 		{ icon: Palette, name: 'Handicrafts' },
 		{ icon: Fish, name: 'Fishes' },
 		{ icon: Carrot, name: 'Vegetables' },
 		{ icon: Shirt, name: 'Clothings' },
 		{ icon: Package, name: 'Plastic Products' },
 		{ icon: Scissors, name: 'Wigs' },
-		{ icon: Briefcase, name: 'Leathers' }
-	
-   Imports
-		{ icon: dress, name: 'Any Garments Item' },
-		{ icon: machine, name: 'Machine' },
-		{ icon: Chemical, name: 'Chemical' },
-		{ icon: Car, name: 'Cars' },
-		
+		{ icon: Layers, name: 'Leathers' },
+		{ icon: ShoppingBag, name: 'Garments' },
+		{ icon: Factory, name: 'Machinery' },
+		{ icon: FlaskConical, name: 'Chemicals' },
+		{ icon: Car, name: 'Cars' }
 	]
 	return (
 		<div className='flex flex-col min-h-screen bg-gradient-to-b from-blue-900 via-blue-800 to-cyan-700'>

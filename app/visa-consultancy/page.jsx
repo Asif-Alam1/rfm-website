@@ -129,7 +129,7 @@ export default function VisaConsultancy() {
 		'Sweden',
 		'Netherlands',
 		'Hungary',
-		'Romania'
+		'Romania',
 		'Qatar',
 		'Kuwait',
 		'Saudi-Arabia',
@@ -142,7 +142,7 @@ export default function VisaConsultancy() {
 		'Denmark',
 		'Italy', 
 		'Canada', 
-		'Brazil'
+		'Brazil',
 		'Japan',
 		'China',
 		'India',
