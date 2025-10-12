@@ -131,8 +131,7 @@ export default function StudentConsultancy() {
 
 	const visaChecklist = [
 		{ item: 'Passport', responsibility: 'Student' },
-		{ item: 'Academic transcripts', responsibility: 'Student' },
-		{ item: 'Work experience certificates', responsibility: 'Student' },
+		{ item: 'Academic transcripts and Certificates', responsibility: 'Student' },
 		{ item: 'Test scores (IELTS, Duolingo, itep)', responsibility: 'If needed' },
 		
 		{
