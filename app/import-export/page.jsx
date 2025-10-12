@@ -88,26 +88,7 @@ export default function ImportExport() {
 	}
 
 	const services = [
-		{
-			icon: Globe,
-			title: 'Global Market Access',
-			description: 'Expand your reach to international markets'
-		},
-		{
-			icon: TrendingUp,
-			title: 'Trade Compliance',
-			description: 'Navigate complex trade regulations with ease'
-		},
-		{
-			icon: BarChart,
-			title: 'Market Analysis',
-			description: 'Data-driven insights for informed decisions'
-		},
-		{
-			icon: ShieldCheck,
-			title: 'Risk Management',
-			description: 'Mitigate risks in international trade'
-		},
+		
 		{
 			icon: Truck,
 			title: 'Logistics Support',
@@ -116,7 +97,17 @@ export default function ImportExport() {
 		{
 			icon: Package,
 			title: 'Custom Clearance',
-			description: 'Streamlined customs processes and documentation'
+			description: 'Streamlined customs processes and documentation with expert C&F Agent'
+		},
+		{
+			icon: ShieldCheck,
+			title: 'Door to Door Service',
+			description: 'You can order from anywhere in the world and receive it at your home'
+		},
+		{
+			icon: Briefcase,
+			title: 'Sourcing',
+			description: 'We will source the products for you from anywhere in the world'
 		}
 	]
 
