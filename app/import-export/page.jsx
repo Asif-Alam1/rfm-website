@@ -32,6 +32,11 @@ import {
 	Palette,
 	Scissors,
 	Droplet,
+	machine,
+	cosmetics,
+	dress,
+	car,
+	chemical,
 	Briefcase
 } from 'lucide-react'
 import Image from 'next/image'
@@ -111,7 +116,7 @@ export default function ImportExport() {
 		}
 	]
 
-	const products = [
+	const products = [ Exports
 		{ icon: Palette, name: 'Handicrafts' },
 		{ icon: Fish, name: 'Fishes' },
 		{ icon: Carrot, name: 'Vegetables' },
@@ -119,8 +124,14 @@ export default function ImportExport() {
 		{ icon: Package, name: 'Plastic Products' },
 		{ icon: Scissors, name: 'Wigs' },
 		{ icon: Briefcase, name: 'Leathers' }
+	
+   Imports
+		{ icon: dress, name: 'Any Garments Item' },
+		{ icon: machine, name: 'Machine' },
+		{ icon: Chemical, name: 'Chemical' },
+		{ icon: Car, name: 'Cars' },
+		
 	]
-
 	return (
 		<div className='flex flex-col min-h-screen bg-gradient-to-b from-blue-900 via-blue-800 to-cyan-700'>
 			<main className='flex-1 pt-16'>
@@ -219,11 +230,6 @@ export default function ImportExport() {
 									<ol className='relative border-l border-blue-200 ml-3 space-y-8'>
 										{[
 											{
-												title: 'Market Research',
-												description:
-													'Identify potential suppliers and analyze market demand for products.'
-											},
-											{
 												title: 'Supplier Selection',
 												description:
 													'Evaluate and choose reliable suppliers based on quality, price, and reliability.'
@@ -266,11 +272,7 @@ export default function ImportExport() {
 								<div className='bg-white p-6 rounded-lg shadow-lg'>
 									<ol className='relative border-l border-blue-200 ml-3 space-y-8'>
 										{[
-											{
-												title: 'Market Analysis',
-												description:
-													'Research potential markets and identify export opportunities.'
-											},
+											
 											{
 												title: 'Product Adaptation',
 												description:
@@ -327,7 +329,8 @@ export default function ImportExport() {
 										'Expert Team',
 										'Customized Solutions',
 										'24/7 Support',
-										'Competitive Pricing'
+										'Competitive Pricing',
+			                            'Trustworthy'
 									].map((item, index) => (
 										<li key={index} className='flex items-center'>
 											<CheckCircle className='h-6 w-6 mr-2 text-blue-300' />
