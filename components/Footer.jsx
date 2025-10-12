@@ -23,6 +23,11 @@ const Footer = () => {
 								Home
 							</Link>
 							<Link
+								href='/ratnodwip-resort'
+								className='hover:text-yellow-300 transition-colors'>
+								Ratnodwip Resort
+							</Link>
+							<Link
 								href='/import-export'
 								className='hover:text-yellow-300 transition-colors'>
 								Import Exports

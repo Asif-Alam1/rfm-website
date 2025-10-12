@@ -33,6 +33,7 @@ const Navbar = () => {
 	}, [])
 
 	const navItems = [
+		{ href: '/ratnodwip-resort', label: 'Ratnodwip Resort' },
 		{ href: '/import-export', label: 'Import-Export' },
 		{ href: '/student-consultancy', label: 'Student Consultancy' },
 		{ href: '/visa-consultancy', label: 'Visa Consultancy' },

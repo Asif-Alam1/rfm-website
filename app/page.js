@@ -13,7 +13,8 @@ import {
 	MapPin,
 	ArrowRight,
 	CheckCircle,
-	House
+	House,
+	Sun
 } from 'lucide-react'
 import Image from 'next/image'
 import Link from 'next/link'
@@ -34,13 +35,14 @@ export default function Home() {
 			{ threshold: 0.1 }
 		)
 
-		if (heroRef.current) {
-			observer.observe(heroRef.current)
+		const currentHeroRef = heroRef.current
+		if (currentHeroRef) {
+			observer.observe(currentHeroRef)
 		}
 
 		return () => {
-			if (heroRef.current) {
-				observer.unobserve(heroRef.current)
+			if (currentHeroRef) {
+				observer.unobserve(currentHeroRef)
 			}
 		}
 	}, [])
@@ -139,6 +141,13 @@ export default function Home() {
 						</h2>
 						<div className='grid grid-cols-1 md:grid-cols-2 gap-10'>
 							{[
+								{
+									icon: Sun,
+									title: 'Ratnodwip Resort',
+									description:
+										'Islandside escapes at Ratnodwip Beach View Resort on Saint Martin\'s East Beach',
+									href: '/ratnodwip-resort'
+								},
 								{
 									icon: Globe,
 									title: 'Import-Export',
