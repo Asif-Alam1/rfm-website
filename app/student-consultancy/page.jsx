@@ -130,42 +130,32 @@ export default function StudentConsultancy() {
 	]
 
 	const visaChecklist = [
-		{ item: 'Passport', responsibility: 'Client' },
-		{ item: 'Academic transcripts', responsibility: 'Client' },
-		{ item: 'Work experience certificates', responsibility: 'Client' },
-		{ item: 'Test scores (IELTS, Duolingo, itep)', responsibility: 'Client' },
-		{
-			item: 'Internships and other relevant certificates',
-			responsibility: 'Client'
-		},
+		{ item: 'Passport', responsibility: 'Student' },
+		{ item: 'Academic transcripts', responsibility: 'Student' },
+		{ item: 'Work experience certificates', responsibility: 'Student' },
+		{ item: 'Test scores (IELTS, Duolingo, itep)', responsibility: 'If needed' },
+		
 		{
 			item: 'Bank Solvency',
-			responsibility: 'Client (RFM will help if needed)'
+			responsibility: 'Student (RFM will help if needed)'
 		},
 		{
 			item: '6 month bank statement',
 			responsibility: 'Client (RFM will help if needed)'
 		},
-		{ item: 'i20 and offer letter', responsibility: 'University' },
-		{ item: 'Visa appointment letter', responsibility: 'RFM' },
-		{ item: 'DS-160 confirmation', responsibility: 'RFM' },
-		{ item: 'SEVIS-Fee receipt and Visa fee receipt', responsibility: 'RFM' },
+		{ item: 'offer letter', responsibility: 'University' },
+		{ item: 'Embassy Appointment', responsibility: 'RFM' },
 		{ item: 'Scholarship', responsibility: 'RFM' }
 	]
 
 	const applicationProcess = [
-		'Language test',
 		'Submission of all academic certificates to the university',
 		'Getting Offer Letter from university',
 		'Manage Bank Solvency',
-		'Getting i-20',
-		'Sevis fee Submission',
-		'DS-160 Form',
 		'Embassy Date',
 		'Facing Embassy',
 		'Getting Visa',
 		'Fly',
-		'Paying Tuition Fee at the University'
 	]
 
 	const partnerUniversities = [
