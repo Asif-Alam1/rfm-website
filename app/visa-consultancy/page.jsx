@@ -101,7 +101,7 @@ export default function VisaConsultancy() {
 			description: 'For individuals joining family members overseas'
 		},
 		{
-			icon: mosque,
+			icon: Plane,
 			title: 'Umrah Hajj Visa',
 			description: 'For Performing Hajj with Family'
 		},
