@@ -254,7 +254,7 @@ export default function RatnodwipResortPage() {
 							</div>
 							<div className='relative h-[400px] rounded-lg overflow-hidden shadow-2xl scroll-animate'>
 								<Image
-									src='/ratnowdip-5.jpg'
+									src='/ratnowdip-2.jpeg'
 									alt='Ratnodwip resort experience'
 									fill
 									className='object-cover'
