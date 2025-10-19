@@ -23,28 +23,16 @@ import {
 	Phone,
 	Facebook,
 	Bed,
-	Wifi,
 	Coffee
 } from 'lucide-react'
 import toast from 'react-hot-toast'
 
 const galleryImages = [
-	{
-		src: 'https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1200&q=80',
-		alt: 'Tropical resort infinity pool at sunset'
-	},
-	{
-		src: 'https://images.unsplash.com/photo-1519821172141-b5d8a4d85180?auto=format&fit=crop&w=1200&q=80',
-		alt: 'Luxurious beachfront suite interior with ocean view'
-	},
-	{
-		src: 'https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1200&q=80',
-		alt: 'Palm trees lining a white sand beach'
-	},
-	{
-		src: 'https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&w=1200&q=80',
-		alt: 'Oceanfront dining setup at dusk'
-	}
+	{ src: '/ratnowdip-1.jpeg', alt: 'Ratnodwip resort exterior view 1' },
+	{ src: '/ratnowdip-2.jpeg', alt: 'Ratnodwip resort exterior view 2' },
+	{ src: '/ratnowdip-3.jpeg', alt: 'Ratnodwip resort interior view' },
+	{ src: '/ratnowdip-4.jpeg', alt: 'Ratnodwip beachfront view' },
+	{ src: '/ratnowdip-5.jpeg', alt: 'Ratnodwip rooms and amenities' }
 ]
 
 export default function RatnodwipResortPage() {
@@ -121,9 +109,9 @@ export default function RatnodwipResortPage() {
 			description: 'Natural ventilation with refreshing sea breezes'
 		},
 		{
-			icon: Wifi,
+			icon: Sun,
 			title: 'Modern Amenities',
-			description: 'Stay connected with WiFi and essential facilities'
+			description: 'Essential facilities and bright, airy rooms'
 		},
 		{
 			icon: Coffee,
@@ -266,8 +254,8 @@ export default function RatnodwipResortPage() {
 							</div>
 							<div className='relative h-[400px] rounded-lg overflow-hidden shadow-2xl scroll-animate'>
 								<Image
-									src='https://images.unsplash.com/photo-1559827260-dc66d52bef19?auto=format&fit=crop&w=1200&q=80'
-									alt='Saint Martin Island Beach'
+									src='/ratnowdip-5.jpg'
+									alt='Ratnodwip resort experience'
 									fill
 									className='object-cover'
 								/>
