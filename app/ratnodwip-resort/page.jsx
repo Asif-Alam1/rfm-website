@@ -29,7 +29,7 @@ import toast from 'react-hot-toast'
 
 const galleryImages = [
 	{ src: '/ratnowdip-1.jpeg', alt: 'Ratnodwip resort exterior view 1' },
-	{ src: '/ratnowdip-2.jpeg', alt: 'Ratnodwip resort exterior view 2' },
+
 	{ src: '/ratnowdip-3.jpeg', alt: 'Ratnodwip resort interior view' },
 	{ src: '/ratnowdip-4.jpeg', alt: 'Ratnodwip beachfront view' },
 	{ src: '/ratnowdip-5.jpeg', alt: 'Ratnodwip rooms and amenities' }
