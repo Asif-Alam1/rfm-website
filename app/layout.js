@@ -1,33 +1,49 @@
-import localFont from 'next/font/local'
+import { Fraunces, Manrope } from 'next/font/google'
 import './globals.css'
 import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
+import ScrollProgress from '../components/ScrollProgress'
+import BackToTop from '../components/BackToTop'
 import { Toaster } from 'react-hot-toast'
 
-const geistSans = localFont({
-	src: './fonts/GeistVF.woff',
-	variable: '--font-geist-sans',
-	weight: '100 900'
+const fraunces = Fraunces({
+	subsets: ['latin'],
+	display: 'swap',
+	variable: '--font-fraunces',
+	axes: ['SOFT', 'opsz']
 })
-const geistMono = localFont({
-	src: './fonts/GeistMonoVF.woff',
-	variable: '--font-geist-mono',
-	weight: '100 900'
+
+const manrope = Manrope({
+	subsets: ['latin'],
+	display: 'swap',
+	variable: '--font-manrope'
 })
 
 export const metadata = {
-	title: 'RFM website',
-	description: 'Built by Asif Alam'
+	title: 'RFM International — A house of global services',
+	description:
+		'A diversified Bangladeshi services group: import-export, study abroad, visa consultancy, real estate, and Ratnodwip Resort on Saint Martin\'s Island.'
 }
 
 export default function RootLayout({ children }) {
 	return (
-		<html lang='en'>
-			<body
-				className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
-				<Toaster position='top-center' />
+		<html lang='en' className={`${fraunces.variable} ${manrope.variable}`}>
+			<body className='bg-bone text-ink antialiased'>
+				<Toaster
+					position='top-center'
+					toastOptions={{
+						style: {
+							background: 'hsl(var(--ink))',
+							color: 'hsl(var(--bone))',
+							borderRadius: '2px',
+							fontFamily: 'var(--font-manrope)'
+						}
+					}}
+				/>
+				<ScrollProgress />
 				<Navbar />
 				{children}
+				<BackToTop />
 				<Footer />
 			</body>
 		</html>
