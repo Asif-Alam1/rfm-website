@@ -132,7 +132,7 @@ const journeyTabs = {
 			{ title: 'Initial consultation', body: 'Discuss your academic goals, preferences, and budget with our counsellors.' },
 			{ title: 'Career assessment', body: 'Aptitude testing and exploration of career options to align study plans with your future.' },
 			{ title: 'Country & university research', body: 'Explore study destinations and universities matched to your profile.' },
-			{ title: 'Standardised test prep', body: 'IELTS, TOEFL, GRE, GMAT — guidance and preparation resources.' }
+			{ title: 'Standardised test prep', body: 'IELTS, TOEFL, GRE, GMAT, guidance and preparation resources.' }
 		]
 	},
 	application: {
@@ -212,7 +212,7 @@ export default function StudentConsultancy() {
 				<div className='max-w-[1280px] mx-auto px-5 md:px-8 lg:px-12'>
 					<div className='grid grid-cols-12 gap-8'>
 						<div className='col-span-12 lg:col-span-7'>
-							<p className='eyebrow mb-6 animate-rise-soft'>Practice 02 / Study Abroad</p>
+							<p className='eyebrow mb-6 animate-rise-soft'>Business 02 / Study Abroad</p>
 							<h1 className='font-display text-display-2xl animate-rise delay-100'>
 								Your degree.<br />
 								<em className='not-italic text-clay'>Anywhere.</em>

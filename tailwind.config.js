@@ -20,8 +20,8 @@ module.exports = {
 		},
 		extend: {
 			fontFamily: {
-				display: ['var(--font-fraunces)', 'ui-serif', 'Georgia', 'serif'],
-				sans: ['var(--font-manrope)', 'ui-sans-serif', 'system-ui', 'sans-serif']
+				display: ['var(--font-display)', 'ui-serif', 'Georgia', 'serif'],
+				sans: ['var(--font-sans)', 'ui-sans-serif', 'system-ui', 'sans-serif']
 			},
 			colors: {
 				ink: {

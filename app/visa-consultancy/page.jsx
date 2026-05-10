@@ -122,14 +122,14 @@ export default function VisaConsultancy() {
 				<div className='max-w-[1280px] mx-auto px-5 md:px-8 lg:px-12'>
 					<div className='grid grid-cols-12 gap-8'>
 						<div className='col-span-12 lg:col-span-7'>
-							<p className='eyebrow mb-6 animate-rise-soft'>Practice 03 / Visa Consultancy</p>
+							<p className='eyebrow mb-6 animate-rise-soft'>Business 03 / Visa Consultancy</p>
 							<h1 className='font-display text-display-2xl animate-rise delay-100'>
 								Borders, <em className='not-italic text-clay'>opened.</em>
 							</h1>
 						</div>
 						<div className='col-span-12 lg:col-span-4 lg:col-start-9 flex items-end animate-rise-soft delay-300'>
 							<p className='text-ash text-base md:text-lg leading-relaxed text-pretty'>
-								Work, student, family, and tourist visas — handled
+								Work, student, family, and tourist visas, handled
 								end-to-end with documentation, embassy appointments, and
 								follow-up.
 							</p>

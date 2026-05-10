@@ -36,7 +36,7 @@ const services = [
 		index: '03',
 		title: 'Visa Consultancy',
 		blurb:
-			'Work, student, tourist, and family visas — handled end-to-end with documentation support.',
+			'Work, student, tourist, and family visas, handled end-to-end with documentation support.',
 		href: '/visa-consultancy',
 		image:
 			'https://images.unsplash.com/photo-1569154941061-e231b4725ef1?w=1200&h=900&fit=crop'
@@ -54,14 +54,14 @@ const services = [
 		index: '05',
 		title: 'Ratnodwip Resort',
 		blurb:
-			'A beachside escape on Saint Martin\'s East Beach — owned and operated by RFM.',
+			'A beachside escape on Saint Martin\'s East Beach, owned and operated by RFM.',
 		href: '/ratnodwip-resort',
 		image: '/ratnowdip-1.jpeg'
 	}
 ]
 
 const stats = [
-	{ value: '20+', label: 'Years of operation' },
+	{ value: '5+', label: 'Years of operation' },
 	{ value: '5', label: 'Service verticals' },
 	{ value: '40+', label: 'Partner universities' },
 	{ value: '15+', label: 'Countries served' }
@@ -138,16 +138,16 @@ export default function Home() {
 					<div className='grid grid-cols-12 gap-8 lg:gap-12'>
 						<div className='col-span-12 lg:col-span-7'>
 							<p className='eyebrow mb-6 animate-rise-soft'>
-								Established 2005 · Dhaka
+								Established 2021 · Dhaka
 							</p>
 							<h1 className='font-display text-display-2xl text-ink animate-rise delay-100'>
 								A house of <em className='not-italic text-clay font-normal'>global</em> services,
 								built in Bangladesh.
 							</h1>
 							<p className='mt-8 max-w-xl text-base md:text-lg text-ash leading-relaxed text-pretty animate-rise-soft delay-300'>
-								Five businesses under one roof — trade, study abroad, visas,
+								Multiple businesses under one roof: international trade, study abroad, visas,
 								real estate, and a beachside resort on Saint Martin&apos;s
-								Island. Serving clients in fifteen countries for two decades.
+								Island. Serving clients in fifteen countries since 2021.
 							</p>
 							<div className='mt-10 flex flex-wrap items-center gap-4 animate-rise-soft delay-400'>
 								<Link href='#services' className='btn-ink group cta-trigger focus-ring'>
@@ -220,15 +220,15 @@ export default function Home() {
 				<div className='max-w-[1280px] mx-auto px-5 md:px-8 lg:px-12'>
 					<div className='grid grid-cols-12 gap-8 mb-14 md:mb-20'>
 						<div className='col-span-12 md:col-span-4'>
-							<p className='eyebrow mb-4'>Practices</p>
+							<p className='eyebrow mb-4'>Businesses</p>
 							<h2 className='font-display text-display-lg'>
-								Five disciplines, one standard.
+								Multiple disciplines, one standard.
 							</h2>
 						</div>
 						<div className='col-span-12 md:col-span-7 md:col-start-6'>
 							<p className='text-ash text-base md:text-lg leading-relaxed text-pretty md:mt-12'>
-								Each practice operates as its own studio — with its own team,
-								partners, and standards — but shares one operating principle:
+								Each business operates as its own studio, with its own team,
+								partners, and standards, but shares one operating principle:
 								take the work seriously, and the rest follows.
 							</p>
 						</div>
@@ -294,7 +294,7 @@ export default function Home() {
 						<div className='col-span-12 lg:col-span-6 fade-up'>
 							<p className='eyebrow mb-4'>About RFM</p>
 							<h2 className='font-display text-display-lg mb-8'>
-								Two decades of bridging Bangladesh with the world.
+								Bridging Bangladesh with the world, since 2021.
 							</h2>
 							<p className='text-ash text-base md:text-lg leading-relaxed mb-5 text-pretty'>
 								RFM International was founded with a simple idea: that
@@ -302,9 +302,9 @@ export default function Home() {
 								partner who treats global access as a craft.
 							</p>
 							<p className='text-ash text-base md:text-lg leading-relaxed mb-10 text-pretty'>
-								Today, the firm runs five distinct practices, employs a team
+								Today, the firm runs multiple distinct businesses, employs a team
 								of specialists across each, and works with partners on five
-								continents — quietly, and at a high standard.
+								continents, quietly, and at a high standard.
 							</p>
 							<Link href='/about' className='btn-ghost'>
 								Read our story

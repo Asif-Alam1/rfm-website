@@ -50,8 +50,8 @@
 	body {
 		background: hsl(var(--bone));
 		color: hsl(var(--ink));
-		font-family: var(--font-manrope), ui-sans-serif, system-ui, sans-serif;
-		font-feature-settings: 'ss01', 'cv11';
+		font-family: var(--font-sans), ui-sans-serif, system-ui, sans-serif;
+		font-weight: 400;
 		-webkit-font-smoothing: antialiased;
 		text-rendering: optimizeLegibility;
 	}
@@ -60,9 +60,9 @@
 		color: hsl(var(--bone));
 	}
 	h1, h2, h3, h4, h5 {
-		font-family: var(--font-fraunces), ui-serif, Georgia, serif;
-		font-weight: 400;
-		letter-spacing: -0.02em;
+		font-family: var(--font-display), ui-serif, Georgia, serif;
+		font-weight: 500;
+		letter-spacing: -0.015em;
 		text-wrap: balance;
 		color: hsl(var(--ink));
 	}
@@ -70,7 +70,7 @@
 
 @layer components {
 	.eyebrow {
-		font-family: var(--font-manrope), ui-sans-serif, system-ui, sans-serif;
+		font-family: var(--font-sans), ui-sans-serif, system-ui, sans-serif;
 		font-size: 11px;
 		letter-spacing: 0.18em;
 		text-transform: uppercase;
@@ -78,7 +78,7 @@
 		color: hsl(var(--clay));
 	}
 	.eyebrow-ink {
-		font-family: var(--font-manrope), ui-sans-serif, system-ui, sans-serif;
+		font-family: var(--font-sans), ui-sans-serif, system-ui, sans-serif;
 		font-size: 11px;
 		letter-spacing: 0.18em;
 		text-transform: uppercase;
@@ -91,10 +91,9 @@
 		width: 100%;
 	}
 	.serif-display {
-		font-family: var(--font-fraunces), ui-serif, Georgia, serif;
-		font-weight: 400;
-		font-variation-settings: 'opsz' 144, 'SOFT' 30;
-		letter-spacing: -0.025em;
+		font-family: var(--font-display), ui-serif, Georgia, serif;
+		font-weight: 500;
+		letter-spacing: -0.02em;
 	}
 	.tabular {
 		font-variant-numeric: tabular-nums;

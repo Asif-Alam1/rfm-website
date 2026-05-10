@@ -36,7 +36,7 @@ const services = [
 		icon: Briefcase,
 		title: 'Sourcing',
 		description:
-			'We source the products you need — from India, China, and beyond — with quality vetting.'
+			'We source the products you need, from India, China, and beyond, with quality vetting.'
 	},
 	{
 		icon: ShoppingBag,
@@ -181,7 +181,7 @@ export default function ImportExport() {
 				<div className='max-w-[1280px] mx-auto px-5 md:px-8 lg:px-12'>
 					<div className='grid grid-cols-12 gap-8'>
 						<div className='col-span-12 lg:col-span-7'>
-							<p className='eyebrow mb-6 animate-rise-soft'>Practice 01 / Import-Export</p>
+							<p className='eyebrow mb-6 animate-rise-soft'>Business 01 / Import-Export</p>
 							<h1 className='font-display text-display-2xl animate-rise delay-100'>
 								Global trade,<br />
 								<em className='not-italic text-clay'>handled.</em>
@@ -189,7 +189,7 @@ export default function ImportExport() {
 						</div>
 						<div className='col-span-12 lg:col-span-4 lg:col-start-9 flex items-end animate-rise-soft delay-300'>
 							<p className='text-ash text-base md:text-lg leading-relaxed text-pretty'>
-								Sourcing, customs clearance, and door-to-door logistics —
+								Sourcing, customs clearance, and door-to-door logistics
 								across India, China, and partner markets worldwide. We move
 								goods so you can move on.
 							</p>

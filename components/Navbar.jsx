@@ -63,7 +63,7 @@ const Navbar = () => {
 						</div>
 						<div className='hidden sm:flex flex-col leading-tight'>
 							<span className='font-display text-lg text-ink tracking-tight'>RFM International</span>
-							<span className='eyebrow-ink text-[9px] tracking-[0.2em]'>EST. 2005 · DHAKA</span>
+							<span className='eyebrow-ink text-[9px] tracking-[0.2em]'>EST. 2021 · DHAKA</span>
 						</div>
 					</Link>
 

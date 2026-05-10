@@ -32,7 +32,7 @@ const landProjects = [
 ]
 
 const flatProjects = [
-	{ title: 'Chandrima Flat', area: 'Mohammadpur', body: 'Modern apartments — thoughtfully designed and well-finished.' }
+	{ title: 'Chandrima Flat', area: 'Mohammadpur', body: 'Modern apartments, thoughtfully designed and well-finished.' }
 ]
 
 export default function RealEstate() {
@@ -91,7 +91,7 @@ export default function RealEstate() {
 				<div className='max-w-[1280px] mx-auto px-5 md:px-8 lg:px-12 relative z-10'>
 					<div className='grid grid-cols-12 gap-8'>
 						<div className='col-span-12 lg:col-span-7'>
-							<p className='eyebrow mb-6 animate-rise-soft'>Practice 04 / Real Estate</p>
+							<p className='eyebrow mb-6 animate-rise-soft'>Business 04 / Real Estate</p>
 							<h1 className='font-display text-display-2xl animate-rise delay-100'>
 								Land &amp; <em className='not-italic text-clay'>property,</em><br />
 								advised.
@@ -195,7 +195,7 @@ export default function RealEstate() {
 								Tell us what you&apos;re looking for.
 							</h2>
 							<p className='text-bone/70 text-base md:text-lg leading-relaxed text-pretty max-w-md'>
-								Whether you&apos;re buying, investing, or managing — we&apos;ll
+								Whether you&apos;re buying, investing, or managing, we&apos;ll
 								put the right person on it.
 							</p>
 						</div>
@@ -211,7 +211,7 @@ export default function RealEstate() {
 								</div>
 								<div>
 									<label htmlFor='message' className='eyebrow text-bone/50 block mb-2'>What kind of property are you interested in?</label>
-									<textarea id='message' name='message' required rows={4} value={formData.message} onChange={handleChange} className='w-full bg-transparent border-b border-bone/30 py-3 text-bone placeholder:text-bone/40 focus:border-clay outline-none transition-colors resize-none' placeholder='Land, flat, commercial, share — and your preferred area.' />
+									<textarea id='message' name='message' required rows={4} value={formData.message} onChange={handleChange} className='w-full bg-transparent border-b border-bone/30 py-3 text-bone placeholder:text-bone/40 focus:border-clay outline-none transition-colors resize-none' placeholder='Land, flat, commercial, share, and your preferred area.' />
 								</div>
 								<SubmitButton pending={pending} />
 							</form>

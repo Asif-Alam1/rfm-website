@@ -96,7 +96,7 @@ export default function RatnodwipResortPage() {
 				<div className='max-w-[1280px] mx-auto px-5 md:px-8 lg:px-12'>
 					<div className='grid grid-cols-12 gap-8 items-end pb-12'>
 						<div className='col-span-12 lg:col-span-7'>
-							<p className='eyebrow mb-6 animate-rise-soft'>Practice 05 / Hospitality</p>
+							<p className='eyebrow mb-6 animate-rise-soft'>Business 05 / Hospitality</p>
 							<p className='font-display text-2xl text-ash mb-4 italic animate-rise-soft delay-100'>
 								রত্নদ্বীপ বিচ ভিউ রিসোর্ট
 							</p>
@@ -229,7 +229,7 @@ export default function RatnodwipResortPage() {
 							</h2>
 							<p className='text-ash text-base md:text-lg leading-relaxed mb-10 text-pretty'>
 								Saint Martin is small, quiet, and best explored slowly. We
-								can arrange any of the following on request — or simply leave
+								can arrange any of the following on request, or simply leave
 								you alone with the sea.
 							</p>
 							<ul className='border-t border-stone'>

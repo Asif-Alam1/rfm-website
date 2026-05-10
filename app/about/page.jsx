@@ -15,9 +15,9 @@ import {
 
 const values = [
 	{ icon: Users, title: 'Customer-centric', description: 'We put the client at the heart of everything we do.' },
-	{ icon: Target, title: 'Integrity', description: 'Honesty and transparency in every dealing — no exceptions.' },
+	{ icon: Target, title: 'Integrity', description: 'Honesty and transparency in every dealing, no exceptions.' },
 	{ icon: TrendingUp, title: 'Innovation', description: 'We constantly seek better ways to serve and adapt.' },
-	{ icon: Award, title: 'Excellence', description: 'We strive for the highest standards across every practice.' }
+	{ icon: Award, title: 'Excellence', description: 'We strive for the highest standards across every business.' }
 ]
 
 const teamMembers = [
@@ -111,10 +111,10 @@ export default function About() {
 						<div className='col-span-12 lg:col-span-8'>
 							<p className='eyebrow mb-6 animate-rise-soft'>About RFM International</p>
 							<h1 className='font-display text-display-2xl animate-rise delay-100'>
-								A house built on
+								A house built for
 								<br />
-								<em className='not-italic text-clay'>two decades</em> of
-								global reach.
+								<em className='not-italic text-clay'>global reach</em>,
+								proudly Bangladeshi.
 							</h1>
 						</div>
 					</div>
@@ -139,7 +139,7 @@ export default function About() {
 						<div className='col-span-12 lg:col-span-6 fade-up'>
 							<p className='eyebrow mb-4'>Our story</p>
 							<h2 className='font-display text-display-lg mb-8'>
-								Founded with one idea — that global access deserves to be
+								Founded with one idea, that global access deserves to be
 								treated as a craft.
 							</h2>
 							<p className='text-ash text-base md:text-lg leading-relaxed mb-5 text-pretty'>
@@ -149,12 +149,12 @@ export default function About() {
 								connecting people across borders is meaningful work.
 							</p>
 							<p className='text-ash text-base md:text-lg leading-relaxed mb-10 text-pretty'>
-								Two decades on, we operate five distinct practices, employ
+								Today, we operate multiple distinct businesses, employ
 								specialists across each, and work with partners on five
-								continents — quietly, and at a high standard.
+								continents, quietly, and at a high standard.
 							</p>
 							<Link href='/#services' className='btn-ghost'>
-								See our practices
+								See our businesses
 								<ArrowRight className='h-4 w-4' strokeWidth={1.75} />
 							</Link>
 						</div>

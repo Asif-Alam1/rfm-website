@@ -66,7 +66,7 @@ const Footer = () => {
 							and hospitality.
 						</p>
 						<p className='eyebrow text-bone/50 mt-6'>
-							ESTABLISHED 2005 · DHAKA, BANGLADESH
+							ESTABLISHED 2021 · DHAKA, BANGLADESH
 						</p>
 					</div>
 
